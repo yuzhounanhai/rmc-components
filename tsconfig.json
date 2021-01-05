@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@": ["components/*"],
-      "app": ["src/*"]
+      "@/*": ["components/*"],
+      "app/*": ["src/*"]
     },
     "strictNullChecks": true,
     "moduleResolution": "node",
