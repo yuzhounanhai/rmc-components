@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.config.js --hot"
+    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.config.js --hot --progress"
   },
   "keywords": [],
   "author": "",
@@ -29,6 +29,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@types/classnames": "^2.2.11",
+    "@types/jest": "^26.0.19",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "autoprefixer": "^10.1.0",
