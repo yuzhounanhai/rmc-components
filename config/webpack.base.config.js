@@ -109,11 +109,13 @@ module.exports = {
       {
         test: svgRegex,
         loader: resolve('url-loader'),
+        exclude: /node_modules/,
         options: svgOptions,
       },
       {
         test: /\.(png|jpg|jpeg|gif)(\?v=\d+\.\d+\.\d+)?$/i,
         loader: resolve('url-loader'),
+        exclude: /node_modules/,
         options: imageOptions,
       },
     ],

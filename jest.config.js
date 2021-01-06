@@ -34,6 +34,7 @@ module.exports = {
   // default: null
   // 正则表达式到模块名称或模块名称数组的映射
   moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/components/$1',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
   // type: string[]
