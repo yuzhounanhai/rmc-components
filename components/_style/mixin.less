@@ -1,0 +1,10 @@
+// TODO
+@prefixCls: rmcc;
+
+@baseFontSize: 'number';
+.changePX(@px) when (isnumber(@baseFontSize)) {
+  @size: unit((@px / @baseFontSize), rem);
+}
+.changePX(@px) when not (isnumber(@baseFontSize)) {
+  @size: unit((@px / 2), px);
+}
