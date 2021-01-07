@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import SwapOutlined from '@ant-design/icons/lib/icons/SwapOutlined';
+import SwapOutlined from '@ant-design/icons/SwapOutlined';
 import Button from '@/button/button';
 
 describe('Button', () => {
