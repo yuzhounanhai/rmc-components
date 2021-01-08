@@ -18,10 +18,10 @@ button.@{prefixCls}-button {
   word-break: break-all;
   white-space: pre-wrap;
   overflow: hidden;
-  color: #000;
-  border: 1px solid #ddd;
+  color: @btnFont;
+  border: 1px solid @btnBorder;
   border-radius: .changePX(10)[@size];
-  background-color: #ffffff;
+  background-color: @btnBg;
   text-decoration: none;
 
   &.@{prefixCls}-button-circle {
@@ -33,14 +33,26 @@ button.@{prefixCls}-button {
   }
 
   &.@{prefixCls}-button-disabled {
-    background: #f5f5f5;
-    color: rgba(0, 0, 0, 0.25);
-    border-color: #d9d9d9;
+    background: @btnDisabledBg;
+    color: @btnDisabledFont;
+    border-color: @btnDisabledBorder;
     pointer-events: none;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnDisabledFont;
+      }
+    }
   }
 
   &:not(.@{prefixCls}-button-disabled):active {
-    background-color: #ddd;
+    background-color: @btnActiveBg;
+    color: @btnActiveFont;
+    border-color: @btnActiveBorder;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnActiveFont;
+      }
+    }
   }
 
   .@{prefixCls}-icon {
@@ -48,55 +60,75 @@ button.@{prefixCls}-button {
       margin-right: 0;
     }
     svg {
-      fill: #000;
+      fill: @fontColor;
     }
   }
 }
 
 .@{prefixCls}-button-primary {
-  color: #fff;
-  background: #1990ff;
-  border-color: #1990ff;
+  color: @btnPrmFont;
+  background: @btnPrmBg;
+  border-color: @btnPrmBorder;
 
   &.@{prefixCls}-button-disabled {
-    background: rgba(25, 144, 255, 0.4);
-    color: #ffffff;
-    border-color:transparent;
+    background: @btnPrmDisabledBg;
+    color: @btnPrmDisabledFont;
+    border-color: @btnPrmDisabledBorder;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnPrmDisabledFont;
+      }
+    }
   }
 
   &:not(.@{prefixCls}-button-disabled):active {
-    color: #fff;
-    background: #096dd9;
-    border-color: #096dd9;
+    background: @btnPrmActiveBg;
+    border-color: @btnActiveBorder;
+    color: @btnPrmActiveFont;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnPrmActiveFont;
+      }
+    }
   }
 
   .@{prefixCls}-icon {
     svg {
-      fill: #fff;
+      fill: @btnPrmFont;
     }
   }
 }
 
 .@{prefixCls}-button-warning {
-  color: #fff;
-  background: #ff4d4f;
-  border-color: #ff4d4f;
+  color: @btnWarnFont;
+  background: @btnWarnBg;
+  border-color: @btnWarnBorder;
 
   &.@{prefixCls}-button-disabled {
-    background: #f29c9c;
-    color: #ffffff;
-    border-color: #f29c9c;
+    background: @btnWarnDisabledBg;
+    color: @btnWarnFont;
+    border-color: @btnWarnDisabledBorder;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnWarnDisabledFont;
+      }
+    }
   }
 
   &:not(.@{prefixCls}-button-disabled):active {
-    color: #fff;
-    background: #d9363e;
-    border-color: #d9363e;
+    color: @btnWarnFont;
+    background: @btnWarnActiveBg;
+    border-color: @btnWarnActiveBorder;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnWarnActiveFont;
+      }
+    }
   }
 
   .@{prefixCls}-icon {
     svg {
-      fill: #fff;
+      fill: @btnWarnFont;
     }
   }
 }
@@ -106,47 +138,67 @@ button.@{prefixCls}-button {
   height: unset;
   width: unset;
   min-width: unset;
-  display: inline-block;
+  display: inline-flex;
   background: transparent;
   border-color: transparent;
-  color: rgba(0, 0, 0, 0.85);
+  color: @btnTextFont;
   font-size: .changePX(32)[@size];
 
   &.@{prefixCls}-button-disabled {
-    color: rgba(0, 0, 0, 0.25);
+    color: @btnTextDisabledFont;
     background: transparent;
     border-color: transparent;
-  }
-
-  &:not(.@{prefixCls}-button-disabled):active {
-    color: rgba(0, 0, 0, 0.85);
-    background: transparent;
-    border-color: transparent;
-  }
-
-  .@{prefixCls}-icon {
-    svg {
-      fill: rgba(0, 0, 0, 0.85);
-    }
-  }
-}
-
-.@{prefixCls}-button-link {
-  color: #1890ff;
-
-  &:not(.@{prefixCls}-button-disabled):active {
-    color: #096dd9;
-
     .@{prefixCls}-icon {
       svg {
-        fill: #096dd9;
+        fill: @btnTextDisabledFont;
+      }
+    }
+  }
+
+  &:not(.@{prefixCls}-button-disabled):active {
+    color: @btnTextActiveFont;
+    background: transparent;
+    border-color: transparent;
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnTextActiveFont;
       }
     }
   }
 
   .@{prefixCls}-icon {
     svg {
-      fill: #1890ff;
+      fill: @btnTextFont;
+    }
+  }
+}
+
+.@{prefixCls}-button-link {
+  color: @btnLinkFont;
+
+  &:not(.@{prefixCls}-button-disabled):active {
+    color: @btnLinkActiveFont;
+
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnLinkActiveFont;
+      }
+    }
+  }
+
+  &.@{prefixCls}-button-disabled {
+    color: @btnLinkDisabledFont;
+
+    .@{prefixCls}-icon {
+      svg {
+        fill: @btnLinkDisabledFont;
+      }
+    }
+  }
+
+  .@{prefixCls}-icon {
+    svg {
+      fill: @btnLinkFont;
     }
   }
 }
