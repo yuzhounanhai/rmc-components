@@ -24,6 +24,7 @@ export type RenderFuncUtils = {
 };
 
 function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
+  let prevProps: RenderProps = {};
   let render: RenderFn = () => {
     console.error('renderFn is not a function');
   };
@@ -43,7 +44,11 @@ function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
     }
 
     render = (props) => {
-      const jsx = renderFn(props || {}, update, destory);
+      const jsx = renderFn({
+        ...(prevProps || {}),
+        ...(props || {}),
+      }, update, destory);
+      prevProps = props || {};
       ReactDOM.render(
         jsx,
         div,
