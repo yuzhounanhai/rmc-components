@@ -2,8 +2,39 @@ import React from 'react';
 import { mount } from 'enzyme';
 import SwapOutlined from '@ant-design/icons/SwapOutlined';
 import Button from '@/button/button';
+import baseTest from '../../../tests/common/baseTest';
 
 describe('Button', () => {
+
+  baseTest(<Button>button</Button>);
+  
+  baseTest(<Button disabled>button</Button>);
+
+  baseTest(<Button type="default" shape="circle">button</Button>);
+
+  baseTest(<Button type="primary">button</Button>);
+
+  baseTest(<Button type="warning" loading>button</Button>);
+
+  baseTest(
+    <Button
+      type="text"
+      onClick={jest.fn()}
+    >
+      button
+    </Button>
+  );
+
+  baseTest(
+    <Button
+      type="link"
+      rootDom="span"
+      alt="description"
+    >
+      button
+    </Button>
+  );
+
   it('renders button element correctly', () => {
     const wrapper = mount(
       <Button>button</Button>
