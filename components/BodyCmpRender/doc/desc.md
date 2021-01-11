@@ -37,7 +37,7 @@ const renderFn = (props, updateFn, destoryFn) => (
 );
 
 // 调用工具函数获得渲染方法集合，并结构拆解
-// 仅创建渲染方法集合，并不会去渲染
+// 创建渲染方法集合，并不会去渲染组件（但是已经在body中创建了一个承载div容器）
 const {
   render: renderComponent,
   update: updateComponent,
