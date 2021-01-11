@@ -146,6 +146,6 @@ describe('BodyCmpRender', () => {
       number,
     });
     ($$('.btn2') as HTMLElement).click();
-    expect($$A('.contain')).not.toBeNull();
+    expect($$A('.contain').length).toBe(0);
   });
 });
