@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import cn from 'classnames';
 import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
 import { defaultPrefixCls } from '@/_config/dict';
