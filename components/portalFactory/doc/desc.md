@@ -1,11 +1,15 @@
-## 文档组件渲染
+## PortalFactory Portal工厂
 
-这是一个函数工具，提供一套可在 `<body>` 中直接渲染 React 组件的函数方法。
+文档组件渲染
+
+React 的 Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的方案, 区别于 React 的 Portal， PortalFactory 则是提供了一套将子节点渲染到 `<body>` 下（创建的新div进行承载）的方案。
+
+这是一个工具函数，调用执行并传入内容渲染方法，将返回一个带有渲染函数、更新函数、销毁函数的对象字面量。
 
 ### 基本使用
 
 ```javascript
-import BodyCmpRender as renderComponentAtBody from '...';
+import PortalFactory as renderComponentAtBody from '...';
 
 // ...
 
@@ -104,7 +108,7 @@ type RenderFuncUtils = {
 };
 ```
 
-执行 `BodyCmpRender(renderFn)` 后返回文档组件渲染工具集，该工具集包含三个方法：
+执行 `bodyFactory(renderFn)` 后返回文档组件渲染工具集，该工具集包含三个方法：
 
 + render: 文档组件渲染方法，调用该方法后，才真正将组件渲染至body中
 + update: 文档组件更新方法，调用该方法后，可传递修改的props，更新body的渲染内容

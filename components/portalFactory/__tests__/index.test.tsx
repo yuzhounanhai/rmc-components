@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from '@/button/button';
-import BodyCmpRender, {
+import createPortalUtils, {
   contentRenderFn,
-} from '@/BodyCmpRender/index';
+} from '@/portalFactory/index';
 import baseReactDOMTest, {
   $$,
   $$A,
@@ -33,17 +33,17 @@ const renderFn: contentRenderFn = (props, updateFn, destoryFn) => (
   </div>
 );
 
-describe('BodyCmpRender', () => {
+describe('portalFactory', () => {
   baseReactDOMTest();
   it('should render correctly', () => {
-    const bcr = BodyCmpRender(renderFn);
-    expect(bcr).toBeDefined();
-    expect(bcr.render).toBeDefined();
-    expect(bcr.update).toBeDefined();
-    expect(bcr.destory).toBeDefined();
+    const pf = createPortalUtils(renderFn);
+    expect(pf).toBeDefined();
+    expect(pf.render).toBeDefined();
+    expect(pf.update).toBeDefined();
+    expect(pf.destory).toBeDefined();
     const content = '一';
     const number = '1';
-    bcr.render({
+    pf.render({
       content,
       number,
     });
@@ -59,16 +59,16 @@ describe('BodyCmpRender', () => {
   });
 
   it('should update correctly', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     const content1 = '一';
     const number1 = '1';
     const content2 = '二';
     const number2 = '2';
-    bcr.render({
+    pf.render({
       content: content1,
       number: number1,
     });
-    bcr.update({
+    pf.update({
       content: content2,
     });
     expect(
@@ -77,7 +77,7 @@ describe('BodyCmpRender', () => {
     expect(
       $$('.numberValue')?.textContent
     ).toBe(number1);
-    bcr.update({
+    pf.update({
       content: content1,
       number: number2,
     });
@@ -90,23 +90,23 @@ describe('BodyCmpRender', () => {
   });
 
   it('should destory correctly', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
-    bcr.render({
+    pf.render({
       content,
       number,
     });
-    bcr.destory();
+    pf.destory();
     expect($$('.contain')).toBeDefined();
   });
 
   it('call updateFn should not throw error when not call renderFn', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
     expect(() => {
-      bcr.update({
+      pf.update({
         content,
         number,
       });
@@ -114,17 +114,17 @@ describe('BodyCmpRender', () => {
   });
 
   it('call destoryFn should not throw error when not call renderFn', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     expect(() => {
-      bcr.destory();
+      pf.destory();
     }).not.toThrow();
   });
 
   it('should update content when updateFn called in contentRenderFn', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
-    bcr.render({
+    pf.render({
       content,
       number,
     });
@@ -138,10 +138,10 @@ describe('BodyCmpRender', () => {
   });
 
   it('should destory when destory called in contentRenderFn', () => {
-    const bcr = BodyCmpRender(renderFn);
+    const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
-    bcr.render({
+    pf.render({
       content,
       number,
     });
