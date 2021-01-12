@@ -7,13 +7,16 @@ export interface FadeProps {
   speed?: number;
   delay?: number;
   limitTstProperty?: boolean;
-  needDestory?: boolean;
+  needDestroy?: boolean;
   showTimingFunction?: string;
   hideTimingFunction?: string;
   timingFunction?: string;
   children?: React.ReactNode;
   prefixCls?: string;
   onTransitionEnd?: (e: TransitionEvent) => void;
+  onShow?: () => void;
+  onHide?: () => void;
+  onChange?: (isShow: boolean) => void;
   className?: string;
   style?: React.CSSProperties,
   [key: string]: any;
@@ -41,7 +44,8 @@ class Fade extends React.Component<FadeProps, FadeState> {
     show: false,
     delay: 0,
     speed: 0.5,
-    needDestory: false,
+    needDestroy: false,
+    prefixCls: defaultPrefixCls,
     limitTstProperty: false,
     showTimingFunction: '',
     hideTimingFunction: '',
@@ -78,7 +82,7 @@ class Fade extends React.Component<FadeProps, FadeState> {
             this.setState({
               transitionClass: classMap.show,
             });
-          }, 0);
+          }, 50);
         })
       } else {
         this.status = FadeStatusMap.hiding;
@@ -114,28 +118,27 @@ class Fade extends React.Component<FadeProps, FadeState> {
     return hideTimingFunction || timingFunction || undefined;
   }
 
-  handleTransitionEnd(e: TransitionEvent) {
+  handleTransitionEnd() {
     const {
-      onTransitionEnd,
       onShow,
       onHide,
       onChange,
-      needDestory,
+      needDestroy,
     } = this.props;
+
     if (this.status) {
-      if (typeof onTransitionEnd === 'function') {
-        onTransitionEnd(e);
-      }
+      let isShow = false;
       if (this.status === FadeStatusMap.hiding) {
         typeof onHide === 'function' && onHide();
         this.setState({
-          isElementShow: !needDestory,
+          isElementShow: !needDestroy,
         });
       }
       if (this.status === FadeStatusMap.showing) {
+        isShow = true;
         typeof onShow === 'function' && onShow();
       }
-      typeof onChange === 'function' && onChange();
+      typeof onChange === 'function' && onChange(isShow);
       this.status = undefined;
     }
   }
@@ -146,17 +149,18 @@ class Fade extends React.Component<FadeProps, FadeState> {
       children: propsChildren,
       speed,
       delay,
-      needDestory,
+      needDestroy,
       limitTstProperty,
       timingFunction,
       showTimingFunction,
       hideTimingFunction,
       prefixCls = defaultPrefixCls,
       className,
-      onShow,
       style,
+      onShow,
       onHide,
       onChange,
+      onTransitionEnd,
       ...restProps
     } = this.props;
     const {
@@ -180,7 +184,16 @@ class Fade extends React.Component<FadeProps, FadeState> {
             transitionDelay: delay ? `${delay}s` : undefined,
             transitionTimingFunction: this.getTimingFunction(),
           },
-          onTransitionEnd: this.handleTransitionEnd,
+          onTransitionEnd: (e: TransitionEvent) => {
+            if (typeof onTransitionEnd === 'function') {
+              onTransitionEnd(e);
+            }
+            const selfTransitionFunc = (children as React.ReactElement).props.onTransitionEnd;
+            if (typeof selfTransitionFunc === 'function') {
+              selfTransitionFunc(e);
+            }
+            this.handleTransitionEnd();
+          },
           className: cn(
             className,
             (children as React.ReactElement).props.className,
