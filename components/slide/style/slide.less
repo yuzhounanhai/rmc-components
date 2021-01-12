@@ -1,0 +1,27 @@
+.@{prefixCls} {
+  &-slide {
+    transition-property: all;
+    &-begin {
+      &-up {
+        transform: translateY(100%);
+      }
+      &-down {
+        transform: translateY(-100%);
+      }
+      &-left {
+        transform: translateX(100%);
+      }
+      &-right {
+        transform: translateX(-100%);
+      }
+    }
+    &-op {
+      &-0 {
+        opacity: 0;
+      }
+      &-1 {
+        opacity: 1;
+      }
+    }
+  }
+}
