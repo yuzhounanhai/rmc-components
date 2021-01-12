@@ -79,7 +79,6 @@ class Slide extends React.Component<SlideProps, SlideState> {
   componentDidUpdate(prevProps: SlideProps) {
     if (prevProps.show !== this.props.show) {
       if (this.props.show) {
-        console.log('set enter');
         this.status = SlideStatus.enter;
         this.setState({
           isElementShow: true,
@@ -93,7 +92,6 @@ class Slide extends React.Component<SlideProps, SlideState> {
           }, 50);
         });
       } else {
-        console.log('set exit');
         this.status = SlideStatus.exit;
         this.setState({
           transitionClass: this.getTransitionClass(false),
@@ -184,7 +182,6 @@ class Slide extends React.Component<SlideProps, SlideState> {
       direction = Slide.defaultProps.direction,
     } = this.props;
     if (this.status) {
-      console.log(this.status);
       let isEnter = true;
       if (this.status === SlideStatus.enter) {
         typeof onEnter === 'function' && onEnter(this.getStandardDirection(direction));
