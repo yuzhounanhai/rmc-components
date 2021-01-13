@@ -1,0 +1,90 @@
+.@{prefixCls} {
+  &-modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    font-size: @fontSize;
+    z-index: @modalZIndex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-mask {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-color: @maskColor;
+    }
+    &-content {
+      position: relative;
+      width: 76%;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: .changePX(24)[@size];
+      &-no-title {
+        .@{prefixCls}-modal-body {
+          margin: .changePX(40)[@size];
+        }
+      }
+    }
+    &-header {
+      min-height: .changePX(120)[@size];
+      font-size: .changePX(40)[@size];
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-body {
+      min-height: .changePX(150)[@size];
+      max-height: @modalContentMaxHeight;
+      overflow: scroll;
+      line-height: .changePX(36)[@size];
+      margin: 0 .changePX(40)[@size] .changePX(40)[@size];
+      font-size: .changePX(30)[@size];
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      word-break: break-all;
+      &:last-child {
+        min-height: .changePX(175)[@size];
+      }
+    }
+    &-footer {
+      display: flex;
+      min-height: .changePX(100)[@size];
+      border-top: 1px solid @modalBorder;
+      > .@{prefixCls}-modal-button {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        font-size: .changePX(34)[@size];
+        align-items: center;
+        border-right: 1px solid @modalBorder;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    &-ok {
+      color: @modalOkFont;
+    }
+    &-cancel {
+      color: @modalCancelFont;
+    }
+    &-corner-close {
+      position: absolute;
+      right: .changePX(15)[@size];
+      top: .changePX(12)[@size];
+      font-size: .changePX(34)[@size];
+      color: @modalCloseIcon;
+    }
+    &-custom-content {
+      position: relative;
+      margin: 0 auto;
+    }
+  }
+}
