@@ -1,9 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import PortalFactory, {
   contentRenderFn,
 } from '@/portalFactory/index';
 import BaseModal, {
   QuickModalProps,
+  ModalProps,
 } from './modal';
 
 export type ModalType = typeof BaseModal & {
@@ -12,7 +14,14 @@ export type ModalType = typeof BaseModal & {
   showCustom: (config?: QuickModalProps) => void,
 };
 
-const Modal = BaseModal as ModalType;
+const Modal: ModalType = (props: ModalProps) => {
+  return ReactDOM.createPortal(
+    <BaseModal
+      {...props}
+    />,
+    document.body,
+  );
+};
 
 // Feature 是否存在更好的实现方式，如Symbol
 const closeFnCallFlag = '@@__symbols__fromCloseFn_';
