@@ -1,9 +1,16 @@
+// 基础配置
 @baseFontSize: 'number';
+// 基础函数
 .changePX(@px) when (isnumber(@baseFontSize)) {
   @size: unit((@px / @baseFontSize), rem);
 }
 .changePX(@px) when not (isnumber(@baseFontSize)) {
   @size: unit((@px / 2), px);
 }
+
+*[class*="@{prefixCls}-"] {
+  box-sizing: border-box;
+}
+
 @import './variable.less';
 @import './theme.less';
