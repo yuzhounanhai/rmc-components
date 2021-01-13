@@ -122,7 +122,7 @@ class Slide extends React.Component<SlideProps, SlideState> {
     if (limitTstProperty) {
       pv = 'transform';
       if (opacityTst) {
-        pv += ' opacity';
+        pv += ',opacity';
       }
     }
     return pv;
