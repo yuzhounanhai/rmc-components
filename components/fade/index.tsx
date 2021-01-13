@@ -129,9 +129,10 @@ class Fade extends React.Component<FadeProps, FadeState> {
     if (this.status) {
       let isShow = false;
       if (this.status === FadeStatusMap.hiding) {
-        typeof onHide === 'function' && onHide();
         this.setState({
           isElementShow: !needDestroy,
+        }, () => {
+          typeof onHide === 'function' && onHide();
         });
       }
       if (this.status === FadeStatusMap.showing) {

@@ -189,9 +189,10 @@ class Slide extends React.Component<SlideProps, SlideState> {
       }
       if (this.status === SlideStatus.exit) {
         isEnter = false;
-        typeof onExit === 'function' && onExit(this.getStandardDirection(direction));
         this.setState({
           isElementShow: this.getIsElementShow(false),
+        }, () => {
+          typeof onExit === 'function' && onExit(this.getStandardDirection(direction));          
         });
       }
       this.status = '';
