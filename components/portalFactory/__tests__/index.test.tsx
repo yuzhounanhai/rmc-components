@@ -8,7 +8,7 @@ import baseReactDOMTest, {
   $$A,
 } from '../../../tests/common/baseReactDOMTest';
 
-const renderFn: contentRenderFn = (props, updateFn, destrryFn) => (
+const renderFn: contentRenderFn = (props, updateFn, destroyFn) => (
   <div className="contain">
     <span className="contentValue">{props.content}</span>
     <span className="numberValue">{props.number}</span>
@@ -25,7 +25,7 @@ const renderFn: contentRenderFn = (props, updateFn, destrryFn) => (
     <Button
       className="btn btn2"
       onClick={() => {
-        destrryFn();
+        destroyFn();
       }}
     >
       btn2
@@ -40,7 +40,7 @@ describe('portalFactory', () => {
     expect(pf).toBeDefined();
     expect(pf.render).toBeDefined();
     expect(pf.update).toBeDefined();
-    expect(pf.destrry).toBeDefined();
+    expect(pf.destroy).toBeDefined();
     const content = '一';
     const number = '1';
     pf.render({
@@ -89,7 +89,7 @@ describe('portalFactory', () => {
     ).toBe(number2);
   });
 
-  it('should destrry correctly', () => {
+  it('should destroy correctly', () => {
     const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
@@ -97,7 +97,7 @@ describe('portalFactory', () => {
       content,
       number,
     });
-    pf.destrry();
+    pf.destroy();
     expect($$('.contain')).toBeDefined();
   });
 
@@ -113,10 +113,10 @@ describe('portalFactory', () => {
     }).not.toThrow();
   });
 
-  it('call destrryFn should not throw error when not call renderFn', () => {
+  it('call destroyFn should not throw error when not call renderFn', () => {
     const pf = createPortalUtils(renderFn);
     expect(() => {
-      pf.destrry();
+      pf.destroy();
     }).not.toThrow();
   });
 
@@ -137,7 +137,7 @@ describe('portalFactory', () => {
     ).toBe(number);
   });
 
-  it('should destrry when destrry called in contentRenderFn', () => {
+  it('should destroy when destroy called in contentRenderFn', () => {
     const pf = createPortalUtils(renderFn);
     const content = '一';
     const number = '1';
