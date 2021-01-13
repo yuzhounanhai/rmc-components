@@ -46,7 +46,7 @@ class Fade extends React.Component<FadeProps, FadeState> {
     speed: 0.5,
     needDestroy: false,
     prefixCls: defaultPrefixCls,
-    limitTstProperty: false,
+    limitTstProperty: true,
     showTimingFunction: '',
     hideTimingFunction: '',
     timingFunction: 'ease',

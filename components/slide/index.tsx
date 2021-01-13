@@ -58,6 +58,7 @@ class Slide extends React.Component<SlideProps, SlideState> {
     showTimingFunction: '',
     hideTimingFunction: '',
     timingFunction: 'ease',
+    limitTstProperty: true,
     opacityTst: true,
   }
 
