@@ -26,7 +26,7 @@ const Modal: ModalType = (props: ModalProps) => {
 // Feature 是否存在更好的实现方式，如Symbol
 const closeFnCallFlag = '@@__symbols__fromCloseFn_';
 
-const renderModal: contentRenderFn = (props: QuickModalProps, update, destory) => {
+const renderModal: contentRenderFn = (props: QuickModalProps, update, destroy) => {
   const {
     content,
     children,
@@ -52,7 +52,7 @@ const renderModal: contentRenderFn = (props: QuickModalProps, update, destory) =
     typeof onHide === 'function' && onHide();
     // 判断是否由close方法引发的onHide
     if (isInClosing) {
-      destory();
+      destroy();
     }
   };
   const onOkFn = () => {

@@ -7,12 +7,12 @@ export interface RenderProps {
 
 export type UpdateRenderFn = (props?: RenderProps) => void;
 
-export type DestoryRenderFn = () => void;
+export type DestroyRenderFn = () => void;
 
 export type contentRenderFn = (
   props: RenderProps,
   updateCmpFn: UpdateRenderFn,
-  destoryCmpFn: DestoryRenderFn,
+  destroyCmpFn: DestroyRenderFn,
 ) => React.ReactElement;
 
 export type RenderFn = (props?: RenderProps) => void;
@@ -20,7 +20,7 @@ export type RenderFn = (props?: RenderProps) => void;
 export type RenderFuncUtils = {
   render: RenderFn,
   update: UpdateRenderFn,
-  destory: DestoryRenderFn,
+  destroy: DestroyRenderFn,
 };
 
 function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
@@ -28,15 +28,15 @@ function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
   let render: RenderFn = () => {
     console.error('renderFn is not a function');
   };
-  let destory: DestoryRenderFn = () => {
-    console.error('renderFn is not a function');
+  let destroy: DestroyRenderFn = () => {
+    console.error('destroyFn is not a function');
   };
   let update: UpdateRenderFn = () => {};
   if (typeof renderFn === 'function') {
     const div = document.createElement('div');
     document.body.appendChild(div);
 
-    destory = () => {
+    destroy = () => {
       const unmountResult = ReactDOM.unmountComponentAtNode(div);
       if (unmountResult && div.parentNode) {
         div.parentNode.removeChild(div);
@@ -47,7 +47,7 @@ function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
       const jsx = renderFn({
         ...(prevProps || {}),
         ...(props || {}),
-      }, update, destory);
+      }, update, destroy);
       prevProps = props || {};
       ReactDOM.render(
         jsx,
@@ -60,7 +60,7 @@ function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
   };
   return {
     render,
-    destory,
+    destroy,
     update,
   }
 }

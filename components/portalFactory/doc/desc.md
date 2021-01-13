@@ -14,7 +14,7 @@ import PortalFactory as renderComponentAtBody from '...';
 // ...
 
 // 创建实际渲染函数
-const renderFn = (props, updateFn, destoryFn) => (
+const renderFn = (props, updateFn, destroyFn) => (
   <div>
     <span className="contentValue">{props.content}</span>
     <Button
@@ -32,7 +32,7 @@ const renderFn = (props, updateFn, destoryFn) => (
       className="btn2"
       onClick={() => {
         // 在渲染函数中内置销毁组件的方法
-        destoryFn();
+        destroyFn();
       }}
     >
       btn2
@@ -45,7 +45,7 @@ const renderFn = (props, updateFn, destoryFn) => (
 const {
   render: renderComponent,
   update: updateComponent,
-  destory: destoryComponent,
+  destroy: destroyComponent,
 } = renderComponentAtBody(renderFn);
 
 // 执行渲染，调用该方法后才会去执行renderFn
@@ -64,7 +64,7 @@ setTimeout(() => {
 // ...
 setTimeout(() => {
   // 可以在业务逻辑中销毁刚才渲染的组件
-  destoryComponent();
+  destroyComponent();
 }, 10000);
 
 ```
@@ -75,7 +75,7 @@ setTimeout(() => {
 type contentRenderFn = (
   props: RenderProps,
   updateCmpFn: UpdateRenderFn,
-  destoryCmpFn: DestoryRenderFn,
+  destroyCmpFn: DestroyRenderFn,
 ) => React.ReactElement;
 ```
 主渲染函数是文档组件渲染工具的核心，文档组件渲染工具将使用你提供的渲染函数去渲染组件至顶层（body）
@@ -84,7 +84,7 @@ type contentRenderFn = (
 
 + props: 实时组件props，你可以将它理解为函数组件的props
 + updateCmpFn: 组件更新方法，你可以调用该方法，去触发一次props更新
-+ destoryCmpFn： 组件销毁方法，你可以调用该方法，将该渲染在顶层的组件内容进行销毁
++ destroyCmpFn： 组件销毁方法，你可以调用该方法，将该渲染在顶层的组件内容进行销毁
 
 主渲染函数返回 ReactElement
 
@@ -104,7 +104,7 @@ interface RenderProps {
 type RenderFuncUtils = {
   render: RenderFn,
   update: UpdateRenderFn,
-  destory: DestoryRenderFn,
+  destroy: DestroyRenderFn,
 };
 ```
 
@@ -112,7 +112,7 @@ type RenderFuncUtils = {
 
 + render: 文档组件渲染方法，调用该方法后，才真正将组件渲染至body中
 + update: 文档组件更新方法，调用该方法后，可传递修改的props，更新body的渲染内容
-+ destory: 文档组件销毁方法，调用该方法后，可将组件从顶层销毁移除
++ destroy: 文档组件销毁方法，调用该方法后，可将组件从顶层销毁移除
 
 ### RenderFn 文档组件渲染方法
 
@@ -130,10 +130,10 @@ type UpdateRenderFn = (props?: RenderProps) => void;
 
 调用该方法后，可传递修改的props，更新内容
 
-### DestoryRenderFn 文档组件销毁方法
+### DestroyRenderFn 文档组件销毁方法
 
 ```typescript
-type DestoryRenderFn = () => void;
+type DestroyRenderFn = () => void;
 ```
 
 调用该方法后，调用该方法后，可将组件从顶层销毁移除
