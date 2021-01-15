@@ -34,9 +34,9 @@ const renderDrawer: contentRenderFn = (props: QuickDrawerProps, update, destroy)
     update(newProps);
   };
 
-  const onCancelFn = () => {
+  const onCancelFn = (...customParam: any[]) => {
     typeof onCancel === 'function'
-        ? onCancel(close)
+        ? onCancel(close, ...customParam)
         : close();
   };
 

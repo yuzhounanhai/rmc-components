@@ -17,15 +17,17 @@ export interface DrawerCommonProps {
   onShow?: () => void;
 };
 
+type CancelFn = (...customParams: any[]) => void;
+
 export interface DrawerProps extends DrawerCommonProps {
-  children?: React.ReactNode;
-  onCancel?: () => void;
+  children?: React.ReactNode | ((onCancel: CancelFn) => React.ReactNode);
+  onCancel?: CancelFn;
   [key: string]: any;
 };
 
 export interface QuickDrawerProps extends DrawerCommonProps {
-  content?: React.ReactNode;
-  onCancel?: (close: () => void) => void;
+  content?: React.ReactNode | ((onCancel: CancelFn) => React.ReactNode);
+  onCancel?: (close: () => void, ...customParams: any[]) => void;
   [key: string]: any;
 };
 
@@ -61,8 +63,8 @@ function Drawer(props: DrawerProps) {
     standardDirection = 'down';
   }
 
-  const onTriggerClose = () => {
-    typeof onCancel === 'function' && onCancel();
+  const onTriggerClose = (...customParams: any[]) => {
+    typeof onCancel === 'function' && onCancel(...customParams);
   };
 
   return (
@@ -84,7 +86,9 @@ function Drawer(props: DrawerProps) {
           >
             <div
               className={`${prefixCls}-drawer-mask`}
-              onClick={maskClosable ? onTriggerClose : undefined}
+              onClick={maskClosable ? () => {
+                onTriggerClose();
+              } : undefined}
             />
           </FadeIn>
         )
