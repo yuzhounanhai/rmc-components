@@ -1,0 +1,17 @@
+.@{prefixCls}-carousel {
+  &.swiper-container-horizontal {
+    &>.swiper-pagination-bullets{
+      .swiper-pagination-bullet {
+        width: .changePX(32)[@size];
+        height: .changePX(6)[@size];
+        background: #fff;
+        color: transparent;
+        border-radius: 1px;
+        transition: all 0.3s;
+        &.swiper-pagination-bullet-active {
+          width: .changePX(48)[@size];
+        }
+      }
+    }
+  }
+}
