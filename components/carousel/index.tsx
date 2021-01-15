@@ -7,8 +7,6 @@ import {
 } from 'swiper/react';
 import { AutoplayOptions } from 'swiper/types/components/autoplay';
 import { isDef } from '@/_util/index';
-import 'swiper/swiper.less';
-import 'swiper/components/pagination/pagination.less';
 import { defaultPrefixCls } from '@/_config/dict';
 
 SwiperCore.use([Virtual, Autoplay, Pagination]);
