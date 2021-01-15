@@ -9,7 +9,7 @@ import { SwiperSlide } from 'swiper/react';
 import { isDef } from '@/_util/index';
 import { defaultPrefixCls } from '@/_config/dict';
 
-type Key = string | number;
+export type Key = string | number;
 
 export interface PickerImcascadeData {
   key: Key;
