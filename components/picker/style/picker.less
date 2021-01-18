@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(221, 221, 221, 0.7);
+    border-bottom: 1px solid @pickerHeaderBorder;
   }
   &-wrapper {
     .@{prefixCls}-drawer-content {
@@ -13,8 +13,9 @@
     }
   }
   &-title {
-    color: #333333;
+    color: @pickerTitle;
     flex: 1;
+    font-size: .changePX(32)[@size];
     text-align: center;
     flex-shrink: 0;
     overflow: hidden;
@@ -25,10 +26,10 @@
   }
   &-ok,
   &-cancel {
-    padding: 0 0.3rem;
-    height: 1rem;
-    font-size: 0.28rem;
-    color: #108ee9;
+    padding: 0 .changePX(30)[@size];
+    height: @pickerHeaderHeight;
+    font-size: .changePX(28)[@size];
+    color: @pickerHeaderBtn;
     display: flex;
     justify-content: center;
     align-items: center;
