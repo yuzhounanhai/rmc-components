@@ -1,0 +1,41 @@
+.@{prefixCls}-input {
+  position: relative;
+  display: flex;
+  background-color: @inputComponentBg;
+  align-items: stretch;
+  height: @inputHeight;
+  width: 100%;
+  input {
+    padding-left: @inputLeftPadding;
+    padding-right: @inputRightPadding;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 100%;
+    box-sizing: border-box;
+    color: @inputFont;
+    font-size: @inputFontSize;
+  }
+
+  &-container {
+    flex: 1;
+  }
+
+  &-addons {
+    padding: 0 @inputAddonsPadding;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > * {
+      margin-right: @inputAddonsPadding;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &-icon {
+    font-size: @inputIconFontSize;
+    color: @inputIconFont;
+  }
+}
