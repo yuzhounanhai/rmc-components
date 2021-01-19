@@ -1,0 +1,35 @@
+.@{prefixCls}-grid-pwd {
+  display: flex;
+  justify-content: space-between;
+  &-item {
+    width: @gridPwdItemSize;
+    height: @gridPwdItemSize;
+    flex-shrink: 0;
+    background-color: @gridPwdItemBg;
+    border-radius: @gridPwdItemBR;
+    border: 1px solid @gridPwdItemBorder;
+  }
+  &-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  &-focus,
+  &-next-grid,
+  &-has-value {
+    border-color: @gridPwdItemHighLight;
+  }
+  &-has-value {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: '';
+      display: block;
+      width: @gridPwdItemSymbolSize;
+      height: @gridPwdItemSymbolSize;
+      border-radius: 50%;
+      background-color: @gridPwdItemFont;
+    }
+  }
+}
