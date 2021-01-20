@@ -24,9 +24,10 @@ export default (props: ArticleProps) => {
     avatarConfig,
     paragraphConfig,
     titleConfig,
+    ...restProps
   } = props;
   return (
-    <div className={`${prefixCls}-skeleton-article`}>
+    <div className={`${prefixCls}-skeleton-article`} {...restProps}>
       {
         avatar && (
           <div className={`${prefixCls}-skeleton-l`}>
