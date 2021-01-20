@@ -1,0 +1,72 @@
+.shapeStyles() {
+  &.@{prefixCls}-skeleton-smooth {
+    border-radius: .changePX(10)[@size];
+  }
+  &.@{prefixCls}-skeleton-round {
+    border-radius: .changePX(100)[@size];
+  }
+}
+
+.@{prefixCls}-skeleton {
+  .inlineStyles() {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  background: @skeletonBg;
+  &-article {
+    display: flex;
+    .@{prefixCls}-skeleton-r {
+      width: 100%;
+    }
+    .@{prefixCls}-skeleton-l {
+      padding-right: .changePX(32)[@size];
+    }
+  }
+  &-active {
+    background: @skeletonActiveBg;
+    background-size: 400% 100%;
+    animation: skeleton-loading @skeletonAnimationDuration @skeletonAnimationTimingFunction infinite;
+  }
+  &-avatar {
+    width: @skeletonAvatarDFSize;
+    height: @skeletonAvatarDFSize;
+    border-radius: 50%;
+    .inlineStyles();
+  }
+  &-button {
+    width: @skeletonButtonDFWidth;
+    height: @skeletonButtonDFHeight;
+    .inlineStyles();
+    .shapeStyles();
+  }
+  &-title {
+    display: block;
+    width: @skeletonTitleDFWidth;
+    height: @skeletonTitleDFHeight;
+    margin-top: .changePX(24)[@size];
+    border-radius: .changePX(6)[@size];
+  }
+  &-paragraph {
+    margin-top: .changePX(24)[@size];
+    display: block;
+  }
+  &-p {
+    list-style: none;
+    width: @skeletonParagraphDFWidth;
+    height: @skeletonParagraphDFHeight;
+    border-radius: .changePX(6)[@size];
+    margin-top: @skeletonParagraphSpaceBetween;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
