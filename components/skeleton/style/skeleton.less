@@ -1,12 +1,3 @@
-.shapeStyles() {
-  &.@{prefixCls}-skeleton-smooth {
-    border-radius: .changePX(10)[@size];
-  }
-  &.@{prefixCls}-skeleton-round {
-    border-radius: .changePX(100)[@size];
-  }
-}
-
 .@{prefixCls}-skeleton {
   .inlineStyles() {
     display: inline-block;
@@ -37,7 +28,12 @@
     width: @skeletonButtonDFWidth;
     height: @skeletonButtonDFHeight;
     .inlineStyles();
-    .shapeStyles();
+    &.@{prefixCls}-skeleton-smooth {
+      border-radius: .changePX(10)[@size];
+    }
+    &.@{prefixCls}-skeleton-round {
+      border-radius: .changePX(100)[@size];
+    }
   }
   &-title {
     display: block;
@@ -58,6 +54,24 @@
     margin-top: @skeletonParagraphSpaceBetween;
     &:first-child {
       margin-top: 0;
+    }
+  }
+  &-image {
+    width: @skeletonImageDFWidth;
+    font-size: @skeletonImageDFWidth;
+    height: @skeletonImageDFHeight;
+    color: #bfbfbf;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .anticon {
+      font-size: @skeletonImageIconSize;
+    }
+    &.@{prefixCls}-skeleton-smooth {
+      border-radius: .changePX(10)[@size];
+    }
+    &.@{prefixCls}-skeleton-circle {
+      border-radius: 50%;
     }
   }
 }
