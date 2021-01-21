@@ -17,12 +17,12 @@ export interface SlideProps {
   showTimingFunction?: string;
   hideTimingFunction?: string;
   timingFunction?: string;
-  onEnter?: (direction: StandardDirections) => void;
-  onExit?: (direction: StandardDirections) => void;
-  onChange?: (direction: StandardDirections, isEnter: boolean) => void;
+  onEnter?: (direction?: StandardDirections) => void;
+  onExit?: (direction?: StandardDirections) => void;
+  onChange?: (direction?: StandardDirections, isEnter?: boolean) => void;
   children?: React.ReactNode;
   prefixCls?: string;
-  onTransitionEnd?: (e: TransitionEvent) => void;
+  onTransitionEnd?: (e?: TransitionEvent) => void;
   className?: string;
   style?: React.CSSProperties,
   [key: string]: any;

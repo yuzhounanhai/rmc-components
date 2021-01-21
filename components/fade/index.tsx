@@ -13,10 +13,10 @@ export interface FadeProps {
   timingFunction?: string;
   children?: React.ReactNode;
   prefixCls?: string;
-  onTransitionEnd?: (e: TransitionEvent) => void;
+  onTransitionEnd?: (e?: TransitionEvent) => void;
   onShow?: () => void;
   onHide?: () => void;
-  onChange?: (isShow: boolean) => void;
+  onChange?: (isShow?: boolean) => void;
   className?: string;
   style?: React.CSSProperties,
   [key: string]: any;
