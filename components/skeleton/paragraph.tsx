@@ -41,6 +41,7 @@ export default (props: ParagraphSkeletonProps) => {
             ),
             height: height || undefined,
           }}
+          key={i}
         />
       )
     }
