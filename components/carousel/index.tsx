@@ -11,7 +11,7 @@ import { defaultPrefixCls } from '@/_config/dict';
 
 SwiperCore.use([Virtual, Autoplay, Pagination]);
 
-export interface SwiperProps {
+export interface CarouselProps {
   children?: React.ReactNode;
   className?: string;
   prefixCls?: string;
@@ -20,7 +20,7 @@ export interface SwiperProps {
   [key: string]: any;
 };
 
-export default (props: SwiperProps) => {
+export default (props: CarouselProps) => {
   const {
     children,
     className,
