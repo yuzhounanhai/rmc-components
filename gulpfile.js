@@ -18,7 +18,12 @@ const paths = {
   indexStyles: 'components/**/style/index.less',
   _styles: 'components/_style/*.less',
   _indexStyles: 'components/_style/index.less',
-  scripts: ['components/**/*.{ts,tsx}', '!components/**/demo/*.{ts,tsx}'],
+  scripts: [
+    'components/**/*.{ts,tsx}',
+    '!components/**/demo/*.{ts,tsx}',
+    '!components/**/__tests__/*.{ts,tsx}',
+    '!components/_hook/**/__tests__/*.{ts,tsx}',
+  ],
 };
 
 function delDirectory() {
