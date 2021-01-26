@@ -1,20 +1,41 @@
-{
-  "presets": [
+function needESModule(env) {
+  if (env === 'esm') {
+    return true;
+  }
+  return false;
+}
+
+function getModules(env) {
+  if (env === 'esm') {
+    return false;
+  }
+  if (env) {
+    return env;
+  }
+  return "commonjs";
+}
+
+module.exports = (env) => ({
+  presets: [
     "@babel/preset-react",
     [
       "@babel/preset-env",
       {
-        "targets": {
-          "browsers": ["last 2 versions", "Firefox ESR", "> 1%", "ie >= 11"]
-        }
+        targets: needESModule(env) ? {
+          esmodules: true,
+        } : {
+          esmodules: false,
+          browsers: ["last 2 versions", "Firefox ESR", "> 1%", "ie >= 11"],
+        },
+        modules: getModules(env),
       }
     ]
   ],
-  "plugins": [
+  plugins: [
     [
       "@babel/plugin-transform-typescript",
       {
-        "isTSX": true
+        isTSX: true
       }
     ],
     "@babel/plugin-transform-object-assign",
@@ -27,17 +48,17 @@
     [
       "@babel/plugin-proposal-decorators",
       {
-        "legacy": true
+        legacy: true
       }
     ],
     [
       "babel-plugin-import",
       {
-        "style": "css",
-        "libraryDirectory": "es",
+        style: "css",
+        libraryDirectory: "es",
         // TODO
-        "libraryName": "nanhai"
+        libraryName: "your-components-name"
       }
     ]
-  ]
-}
+  ],
+});
