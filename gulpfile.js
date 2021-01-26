@@ -16,6 +16,8 @@ const paths = {
   },
   styles: 'components/**/style/*.less',
   indexStyles: 'components/**/style/index.less',
+  _styles: 'components/_style/*.less',
+  _indexStyles: 'components/_style/index.less',
   scripts: ['components/**/*.{ts,tsx}', '!components/**/demo/*.{ts,tsx}'],
 };
 
@@ -98,6 +100,13 @@ function copyLess() {
     .pipe(gulp.dest(paths.dest.es));
 }
 
+function copyComponentsLess() {
+  return gulp
+    .src(paths._styles)
+    .pipe(gulp.dest(paths.dest.lib + '/_style'))
+    .pipe(gulp.dest(paths.dest.es + '/_style'));
+}
+
 /**
  * 生成css文件
  */
@@ -111,7 +120,17 @@ function less2css() {
     .pipe(gulp.dest(paths.dest.es));
 }
 
-const build = gulp.parallel(buildScripts, copyLess, less2css);
+function componentsLess2css() {
+  return gulp
+    .src(paths._indexStyles)
+    .pipe(less()) // 处理less文件
+    .pipe(autoprefixer()) // 根据browserslistrc增加前缀
+    .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
+    .pipe(gulp.dest(paths.dest.lib + '/_style'))
+    .pipe(gulp.dest(paths.dest.es + '/_style'));
+}
+
+const build = gulp.parallel(buildScripts, copyLess, copyComponentsLess, less2css, componentsLess2css);
 
 const flow = gulp.series(delDirectory, build);
 
