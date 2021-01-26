@@ -14,7 +14,8 @@ const paths = {
     lib: 'lib',
     es: 'es',
   },
-  styles: 'components/**/style/index.less',
+  styles: 'components/**/style/*.less',
+  indexStyles: 'components/**/style/index.less',
   scripts: ['components/**/*.{ts,tsx}', '!components/**/demo/*.{ts,tsx}'],
 };
 
@@ -102,7 +103,7 @@ function copyLess() {
  */
 function less2css() {
   return gulp
-    .src(paths.styles)
+    .src(paths.indexStyles)
     .pipe(less()) // 处理less文件
     .pipe(autoprefixer()) // 根据browserslistrc增加前缀
     .pipe(cssnano({ zindex: false, reduceIdents: false })) // 压缩
