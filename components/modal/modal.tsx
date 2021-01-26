@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import CloseOutlined from '@ant-design/icons/CloseOutlined';
-import FadeIn from '@/fade/fadeIn';
-import { defaultPrefixCls } from '@/_config/dict';
+import FadeIn from '../fade/fadeIn';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface ModalCommonProps {
   className?: string;

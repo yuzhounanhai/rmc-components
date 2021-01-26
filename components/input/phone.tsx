@@ -4,7 +4,7 @@ import React, {
   useImperativeHandle,
   forwardRef,
 } from 'react';
-import useUpdateEffect from '@/_hook/useUpdateEffect/index';
+import useUpdateEffect from '../_hook/useUpdateEffect/index';
 import BaseInput, {
   InputItemProps,
   InputRef,

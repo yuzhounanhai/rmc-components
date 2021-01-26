@@ -1,5 +1,5 @@
 import React from 'react';
-import Skeleton from '@/skeleton/index';
+import Skeleton from '../index';
 import baseTest from '../../../tests/common/baseTest';
 
 describe('Skeleton', () => {

@@ -9,9 +9,9 @@ import cn from 'classnames';
 import {
   CloseCircleFilled
 } from '@ant-design/icons';
-import { isDef } from '@/_util/index';
-import useUpdateEffect from '@/_hook/useUpdateEffect/index';
-import { defaultPrefixCls } from '@/_config/dict';
+import { isDef } from '../_util/index';
+import useUpdateEffect from '../_hook/useUpdateEffect/index';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface InputItemProps {
   defaultValue?: string;

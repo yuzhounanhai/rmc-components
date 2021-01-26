@@ -3,9 +3,9 @@ import React, {
   useRef,
   useState,
 } from 'react';
-import FadeIn from '@/fade/fadeIn';
+import FadeIn from '../fade/fadeIn';
 import cn from 'classnames';
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface ToastProps {
   className?: string;

@@ -1,4 +1,4 @@
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 import cn from 'classnames';
 
 export interface CommonSkeletenProps {

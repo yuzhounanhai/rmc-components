@@ -1,4 +1,4 @@
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 import React from 'react';
 import { CommonSkeletenProps } from './base';
 import Avatar, { AvatarSkeletonProps } from './avatar';

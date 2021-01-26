@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
 import LoadingOutlined from '@ant-design/icons/LoadingOutlined';
-import CloseCircle from '@/_icon/CloseCircle/index';
-import CheckCircle from '@/_icon/CheckCircle/index';
+import CloseCircle from '../_icon/CloseCircle/index';
+import CheckCircle from '../_icon/CheckCircle/index';
 import PortalFactory, {
   contentRenderFn,
   RenderFuncUtils,
-} from '@/portalFactory/index';
+} from '../portalFactory/index';
 import BaseToast, {
   ToastProps,
-} from '@/toast/toast';
-import { defaultPrefixCls } from '@/_config/dict';
+} from '../toast/toast';
+import { defaultPrefixCls } from '../_config/dict';
 
 let currentToast: RenderFuncUtils | null = null;
 let timer: number | null = null;

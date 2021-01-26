@@ -6,8 +6,8 @@ import React, {
 import { Swiper as BaseSwiper } from 'swiper';
 import Swiper from './swiper';
 import { SwiperSlide } from 'swiper/react';
-import { isDef } from '@/_util/index';
-import { defaultPrefixCls } from '@/_config/dict';
+import { isDef } from '../_util/index';
+import { defaultPrefixCls } from '../_config/dict';
 
 export type Key = string | number;
 

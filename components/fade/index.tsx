@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface FadeProps {
   show?: boolean;

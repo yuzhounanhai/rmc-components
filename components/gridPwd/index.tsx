@@ -6,11 +6,11 @@ import React, {
 } from 'react';
 import copy from 'copy-to-clipboard';
 import cn from 'classnames';
-import useRefState from '@/_hook/useRefState/index';
+import useRefState from '../_hook/useRefState/index';
 import BaseInput, {
   InputRef,
-} from '@/input/input';
-import { defaultPrefixCls } from '@/_config/dict';
+} from '../input/input';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface GridPwdProps {
   prefixCls?: string;

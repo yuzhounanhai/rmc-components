@@ -5,7 +5,7 @@ import {
   mergeClassNames,
 } from './base';
 import PictureOutlined from '@ant-design/icons/PictureOutlined';
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface ImageSkeletonProps extends CommonSkeletenProps {
   width?: string;

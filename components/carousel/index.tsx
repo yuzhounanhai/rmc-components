@@ -6,8 +6,8 @@ import {
   SwiperSlide,
 } from 'swiper/react';
 import { AutoplayOptions } from 'swiper/types/components/autoplay';
-import { isDef } from '@/_util/index';
-import { defaultPrefixCls } from '@/_config/dict';
+import { isDef } from '../_util/index';
+import { defaultPrefixCls } from '../_config/dict';
 
 SwiperCore.use([Virtual, Autoplay, Pagination]);
 

@@ -1,8 +1,8 @@
 import React from 'react';
-import Button from '@/button/button';
+import Button from '../../button/button';
 import createPortalUtils, {
   contentRenderFn,
-} from '@/portalFactory/index';
+} from '../../portalFactory/index';
 import baseReactDOMTest, {
   $$,
   $$A,

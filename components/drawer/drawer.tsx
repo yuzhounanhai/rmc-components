@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import cn from 'classnames';
-import FadeIn from '@/fade/fadeIn';
-import SlideIn from '@/slide/slideIn';
-import { defaultPrefixCls } from '@/_config/dict';
+import FadeIn from '../fade/fadeIn';
+import SlideIn from '../slide/slideIn';
+import { defaultPrefixCls } from '../_config/dict';
 
 export type Directions = 'up' | 'down' | '↑' | '↓';
 

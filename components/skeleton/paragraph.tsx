@@ -4,7 +4,7 @@ import {
   CommonSkeletenProps,
   mergeClassNames,
 } from './base';
-import { defaultPrefixCls } from '@/_config/dict';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface ParagraphSkeletonProps extends CommonSkeletenProps {
   width?: string | string[];

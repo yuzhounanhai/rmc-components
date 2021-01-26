@@ -2,13 +2,13 @@ import React, {
   useState,
 } from 'react';
 import cn from 'classnames';
-import useRefState from '@/_hook/useRefState';
-import Drawer from '@/drawer/index';
+import useRefState from '../_hook/useRefState';
+import Drawer from '../drawer/index';
 import PickerView, {
   Key,
   PickerViewProps,
-} from '@/pickerView/index';
-import { defaultPrefixCls } from '@/_config/dict';
+} from '../pickerView/index';
+import { defaultPrefixCls } from '../_config/dict';
 
 export interface PickerProps extends PickerViewProps {
   prefixCls?: string;
