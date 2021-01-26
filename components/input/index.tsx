@@ -1,11 +1,15 @@
 import BaseInput from './input';
 import Password from './password';
 import Phone from './phone';
+export type { InputProps } from './input';
+export type { PasswordInputProps } from './password';
+export type { PhoneInputProps } from './phone';
 
 export type InputType = typeof BaseInput & {
   Password: typeof Password;
   Phone: typeof Phone;
 };
+
 
 const Input: InputType = BaseInput as InputType;
 

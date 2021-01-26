@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import useUpdateEffect from '../_hook/useUpdateEffect/index';
 import BaseInput, {
-  InputItemProps,
+  InputProps,
   InputRef,
 } from './input';
 
@@ -16,7 +16,7 @@ import BaseInput, {
 
 export interface PhoneInputRef extends InputRef {};
 
-export interface PhoneInputProps extends InputItemProps {};
+export interface PhoneInputProps extends InputProps {};
 
 function formatPhoneNumber(realValue = '') {
   const arr = [];

@@ -5,7 +5,7 @@ import Avatar, { AvatarSkeletonProps } from './avatar';
 import Title, { TitleSkeletonProps } from './title';
 import Paragraph, { ParagraphSkeletonProps } from './paragraph';
 
-export interface ArticleProps extends CommonSkeletenProps {
+export interface ArticleSkeletonProps extends CommonSkeletenProps {
   avatar?: boolean;
   title?: boolean;
   paragraph?: boolean;
@@ -14,7 +14,7 @@ export interface ArticleProps extends CommonSkeletenProps {
   paragraphConfig?: ParagraphSkeletonProps;
 }
 
-export default (props: ArticleProps) => {
+export default (props: ArticleSkeletonProps) => {
   const {
     prefixCls = defaultPrefixCls,
     active,

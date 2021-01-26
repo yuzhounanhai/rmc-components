@@ -8,6 +8,8 @@ import BaseModal, {
   ModalProps,
 } from './modal';
 
+export type { QuickModalProps, ModalProps } from './modal';
+
 export type ModalType = typeof BaseModal & {
   info: (config?: QuickModalProps) => void,
   confirm: (config?: QuickModalProps) => void,

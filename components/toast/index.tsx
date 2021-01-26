@@ -11,6 +11,7 @@ import BaseToast, {
   ToastProps,
 } from '../toast/toast';
 import { defaultPrefixCls } from '../_config/dict';
+export type { ToastProps } from './toast';
 
 let currentToast: RenderFuncUtils | null = null;
 let timer: number | null = null;

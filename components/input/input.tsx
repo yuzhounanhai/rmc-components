@@ -13,7 +13,7 @@ import { isDef } from '../_util/index';
 import useUpdateEffect from '../_hook/useUpdateEffect/index';
 import { defaultPrefixCls } from '../_config/dict';
 
-export interface InputItemProps {
+export interface InputProps {
   defaultValue?: string;
   onChange?: (value: string) => void;
   maxLength?: number;
@@ -41,7 +41,7 @@ export interface InputRef {
   select(): void;
 };
 
-function InputItem(props: InputItemProps, ref: React.Ref<InputRef>) {
+function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
   const {
     defaultValue,
     onChange,
@@ -219,4 +219,4 @@ function InputItem(props: InputItemProps, ref: React.Ref<InputRef>) {
   )
 };
 
-export default forwardRef<any, InputItemProps>(InputItem) as React.FC<InputItemProps>;
+export default forwardRef<any, InputProps>(InputItem) as React.FC<InputProps>;

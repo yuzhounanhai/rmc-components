@@ -2,9 +2,9 @@ import React, { forwardRef, useState } from 'react';
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
 import { defaultPrefixCls } from '../_config/dict';
-import BaseInput, { InputItemProps, InputRef } from './input';
+import BaseInput, { InputProps, InputRef } from './input';
 
-export interface PasswordInputProps extends InputItemProps {
+export interface PasswordInputProps extends InputProps {
   pwdVisible?: boolean;
 };
 
