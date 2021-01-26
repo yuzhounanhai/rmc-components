@@ -96,11 +96,11 @@ function Drawer(props: DrawerProps) {
       <SlideIn
         direction={direction}
         show={visible}
-        onEnter={() => {
+        onShow={() => {
           contentEnterRef.current = true;
           handleStatusChange();
         }}
-        onExit={() => {
+        onHide={() => {
           contentEnterRef.current = false;
           handleStatusChange();
         }}

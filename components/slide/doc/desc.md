@@ -62,8 +62,8 @@ function Test() {
 | hideTimingFunction | 滑出时的动效函数，即 `transition-timing-function`, 该配置优先级比 `timingFunction` 配置高 | string | - | - |
 | prefixCls | class 前缀 | string | - | - |
 | onTransitionEnd | transition 动画结束时触发回调 | (e: TransitionEvent) => void | - | - |
-| onEnter | 滑入动画结束时触发回调 | (direction: StandardDirections) => void | - | - |
-| onExit | 滑出动画结束时触发回调 | (direction: StandardDirections) => void | - | - |
+| onShow | 滑入动画结束时触发回调 | (direction: StandardDirections) => void | - | - |
+| onHide | 滑出动画结束时触发回调 | (direction: StandardDirections) => void | - | - |
 | onChange | 滑入滑出动画结束时都触发 | (direction: StandardDirections, isEnter: boolean) => void | - | - |
 
 

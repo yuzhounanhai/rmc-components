@@ -1,5 +1,5 @@
-export type { ButtonType } from './button/button';
-export { default as Button } from './button/button';
+export type { ButtonType } from './button';
+export { default as Button } from './button';
 
 export type { CarouselProps } from './carousel';
 export { default as Carousel } from './carousel';

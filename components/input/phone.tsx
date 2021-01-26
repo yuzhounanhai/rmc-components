@@ -54,7 +54,6 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
       return;
     }
     if (value === undefined) {
-      console.log(realValue, 'set');
       setV(realValue);
     }
     if (typeof props.onChange === 'function') {
@@ -86,7 +85,6 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
       return;
     }
     if (newValue !== v) {
-      console.log(newValue, v);
       onRealChangeValue(newValue);
     } else {
       if (componentRef.current) {
