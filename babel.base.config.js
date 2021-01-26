@@ -51,14 +51,5 @@ module.exports = (env) => ({
         legacy: true
       }
     ],
-    [
-      "babel-plugin-import",
-      {
-        style: "css",
-        libraryDirectory: "es",
-        // TODO
-        libraryName: "your-components-name"
-      }
-    ]
   ],
 });
