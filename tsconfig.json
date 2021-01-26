@@ -10,6 +10,8 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "jsx": "preserve",
+    "declaration": true,
+    "outDir": "types",
     "noUnusedParameters": true,
     "noUnusedLocals": true,
     "noImplicitAny": true,
@@ -17,5 +19,6 @@
     "lib": ["dom", "es2017"],
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "lib", "es"]
+  "include": ["components"],
+  "exclude": ["node_modules", "lib", "es", "components/**/__tests__", "components/**/**/__tests__"]
 }
