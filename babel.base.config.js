@@ -34,6 +34,7 @@ module.exports = (env) => ({
         isTSX: true
       }
     ],
+    "@babel/plugin-transform-runtime",
     "@babel/plugin-transform-object-assign",
     "@babel/plugin-transform-property-literals",
     "@babel/plugin-transform-member-expression-literals",
