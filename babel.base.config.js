@@ -1,5 +1,5 @@
 function needESModule(env) {
-  if (env === 'esm') {
+  if (env === 'cjs') {
     return true;
   }
   return false;
@@ -9,10 +9,7 @@ function getModules(env) {
   if (env === 'esm') {
     return false;
   }
-  if (env) {
-    return env;
-  }
-  return "commonjs";
+  return env;
 }
 
 module.exports = (env) => ({
@@ -24,7 +21,6 @@ module.exports = (env) => ({
         targets: needESModule(env) ? {
           esmodules: true,
         } : {
-          esmodules: false,
           browsers: ["last 2 versions", "Firefox ESR", "> 1%", "ie >= 11"],
         },
         modules: getModules(env),
