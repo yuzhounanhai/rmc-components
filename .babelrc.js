@@ -1,3 +1,3 @@
 const getConfig = require('./babel.base.config');
 
-module.exports = getConfig('esm');
+module.exports = getConfig();
