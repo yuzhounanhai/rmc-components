@@ -4,6 +4,11 @@ import {
   mount,
 } from 'enzyme';
 
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useLayoutEffect: jest.requireActual('react').useEffect,
+}));
+
 export default function (components: React.ReactElement) {
   it('component mount and unmount tests', () => {
     const wrapper = mount(components);
