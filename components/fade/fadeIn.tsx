@@ -10,16 +10,14 @@ export default (props: FadeProps) => {
   const [isFirst, setIsFirst] = useState(true);
   const timer = useRef<number|undefined>();
   useEffect(() => {
-    if (show) {
-      timer.current = window.setTimeout(() => {
-        setIsFirst(false);
-      }, 0);
-      return () => {
-        if (timer.current) {
-          clearTimeout(timer.current);
-        }
-      };
-    }
+    timer.current = window.setTimeout(() => {
+      setIsFirst(false);
+    }, 0);
+    return () => {
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+    };
   }, []);
   return (
     <Fade
