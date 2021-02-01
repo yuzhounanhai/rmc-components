@@ -47,7 +47,7 @@ export default (props: CarouselProps) => {
     return (
       <SwiperSlide
         key={realKey}
-        >
+      >
         {child}
       </SwiperSlide>
     )
