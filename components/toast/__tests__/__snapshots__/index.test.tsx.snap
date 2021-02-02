@@ -1,0 +1,707 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast component snapshots tests 1`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-smooth rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Toast component snapshots tests 2`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-smooth rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Toast component snapshots tests 3`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-round rmcc-toast-smooth rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Toast component snapshots tests 4`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast rmcc-toast-at-top",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-smooth rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Toast component snapshots tests 5`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast rmcc-toast-at-bottom",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-smooth rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Toast component snapshots tests 6`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-toast",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-toast-content rmcc-toast-smooth rmcc-toast-has-icon rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "aria-label": "check",
+              "class": "anticon anticon-check",
+              "role": "img",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {
+                  "aria-hidden": "true",
+                  "data-icon": "check",
+                  "fill": "currentColor",
+                  "focusable": "false",
+                  "height": "1em",
+                  "viewBox": "64 64 896 896",
+                  "width": "1em",
+                },
+                "children": Array [
+                  Node {
+                    "attribs": Object {
+                      "d": "M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z",
+                    },
+                    "children": Array [],
+                    "name": "path",
+                    "namespace": "http://www.w3.org/2000/svg",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "tag",
+                    "x-attribsNamespace": Object {
+                      "d": undefined,
+                    },
+                    "x-attribsPrefix": Object {
+                      "d": undefined,
+                    },
+                  },
+                ],
+                "name": "svg",
+                "namespace": "http://www.w3.org/2000/svg",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {
+                  "aria-hidden": undefined,
+                  "data-icon": undefined,
+                  "fill": undefined,
+                  "focusable": undefined,
+                  "height": undefined,
+                  "viewBox": undefined,
+                  "width": undefined,
+                },
+                "x-attribsPrefix": Object {
+                  "aria-hidden": undefined,
+                  "data-icon": undefined,
+                  "fill": undefined,
+                  "focusable": undefined,
+                  "height": undefined,
+                  "viewBox": undefined,
+                  "width": undefined,
+                },
+              },
+            ],
+            "name": "span",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": Node {
+              "attribs": Object {
+                "class": "rmcc-toast-text",
+              },
+              "children": Array [
+                Node {
+                  "data": "content",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "text",
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": [Circular],
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "aria-label": undefined,
+              "class": undefined,
+              "role": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "aria-label": undefined,
+              "class": undefined,
+              "role": undefined,
+            },
+          },
+          Node {
+            "attribs": Object {
+              "class": "rmcc-toast-text",
+            },
+            "children": Array [
+              Node {
+                "data": "content",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "text",
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": Node {
+              "attribs": Object {
+                "aria-label": "check",
+                "class": "anticon anticon-check",
+                "role": "img",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {
+                    "aria-hidden": "true",
+                    "data-icon": "check",
+                    "fill": "currentColor",
+                    "focusable": "false",
+                    "height": "1em",
+                    "viewBox": "64 64 896 896",
+                    "width": "1em",
+                  },
+                  "children": Array [
+                    Node {
+                      "attribs": Object {
+                        "d": "M912 190h-69.9c-9.8 0-19.1 4.5-25.1 12.2L404.7 724.5 207 474a32 32 0 00-25.1-12.2H112c-6.7 0-10.4 7.7-6.3 12.9l273.9 347c12.8 16.2 37.4 16.2 50.3 0l488.4-618.9c4.1-5.1.4-12.8-6.3-12.8z",
+                      },
+                      "children": Array [],
+                      "name": "path",
+                      "namespace": "http://www.w3.org/2000/svg",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "tag",
+                      "x-attribsNamespace": Object {
+                        "d": undefined,
+                      },
+                      "x-attribsPrefix": Object {
+                        "d": undefined,
+                      },
+                    },
+                  ],
+                  "name": "svg",
+                  "namespace": "http://www.w3.org/2000/svg",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {
+                    "aria-hidden": undefined,
+                    "data-icon": undefined,
+                    "fill": undefined,
+                    "focusable": undefined,
+                    "height": undefined,
+                    "viewBox": undefined,
+                    "width": undefined,
+                  },
+                  "x-attribsPrefix": Object {
+                    "aria-hidden": undefined,
+                    "data-icon": undefined,
+                    "fill": undefined,
+                    "focusable": undefined,
+                    "height": undefined,
+                    "viewBox": undefined,
+                    "width": undefined,
+                  },
+                },
+              ],
+              "name": "span",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": [Circular],
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "aria-label": undefined,
+                "class": undefined,
+                "role": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "aria-label": undefined,
+                "class": undefined,
+                "role": undefined,
+              },
+            },
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
