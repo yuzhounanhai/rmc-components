@@ -1,0 +1,805 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer component snapshots tests 1`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-drawer",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+            "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "class": "rmcc-drawer-box",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "content",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+          "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-drawer-box",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "content",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+            "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Drawer component snapshots tests 2`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-drawer",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-content rmcc-drawer-d-down rmcc-slide rmcc-slide-begin-down rmcc-slide-op-0",
+            "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "class": "rmcc-drawer-box",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "content",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-content rmcc-drawer-d-down rmcc-slide rmcc-slide-begin-down rmcc-slide-op-0",
+          "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-drawer-box",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "content",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+            "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Drawer component snapshots tests 3`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-drawer",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+            "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "class": "rmcc-drawer-box",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "content",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+          "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-drawer-box",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "content",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+            "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Drawer component snapshots tests 4`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-drawer",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+          "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+            "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [
+            Node {
+              "attribs": Object {
+                "class": "rmcc-drawer-box",
+              },
+              "children": Array [
+                Node {
+                  "attribs": Object {},
+                  "children": Array [
+                    Node {
+                      "data": "content",
+                      "next": null,
+                      "parent": [Circular],
+                      "prev": null,
+                      "type": "text",
+                    },
+                  ],
+                  "name": "div",
+                  "namespace": "http://www.w3.org/1999/xhtml",
+                  "next": null,
+                  "parent": [Circular],
+                  "prev": null,
+                  "type": "tag",
+                  "x-attribsNamespace": Object {},
+                  "x-attribsPrefix": Object {},
+                },
+              ],
+              "name": "div",
+              "namespace": "http://www.w3.org/1999/xhtml",
+              "next": null,
+              "parent": [Circular],
+              "prev": null,
+              "type": "tag",
+              "x-attribsNamespace": Object {
+                "class": undefined,
+              },
+              "x-attribsPrefix": Object {
+                "class": undefined,
+              },
+            },
+          ],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": null,
+          "parent": [Circular],
+          "prev": [Circular],
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+      Node {
+        "attribs": Object {
+          "class": "rmcc-drawer-content rmcc-drawer-d-up rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
+          "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "class": "rmcc-drawer-box",
+            },
+            "children": Array [
+              Node {
+                "attribs": Object {},
+                "children": Array [
+                  Node {
+                    "data": "content",
+                    "next": null,
+                    "parent": [Circular],
+                    "prev": null,
+                    "type": "text",
+                  },
+                ],
+                "name": "div",
+                "namespace": "http://www.w3.org/1999/xhtml",
+                "next": null,
+                "parent": [Circular],
+                "prev": null,
+                "type": "tag",
+                "x-attribsNamespace": Object {},
+                "x-attribsPrefix": Object {},
+              },
+            ],
+            "name": "div",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "class": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "class": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": Node {
+          "attribs": Object {
+            "class": "rmcc-drawer-mask rmcc-fade rmcc-fade-op-0",
+            "style": "transition-property:opacity;transition-duration:0.5s;transition-timing-function:ease",
+          },
+          "children": Array [],
+          "name": "div",
+          "namespace": "http://www.w3.org/1999/xhtml",
+          "next": [Circular],
+          "parent": [Circular],
+          "prev": null,
+          "type": "tag",
+          "x-attribsNamespace": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+          "x-attribsPrefix": Object {
+            "class": undefined,
+            "style": undefined,
+          },
+        },
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+          "style": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
