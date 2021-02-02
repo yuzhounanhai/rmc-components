@@ -18,6 +18,7 @@ export interface ModalCommonProps {
   closeCorner?: boolean;
   footer?: React.ReactNode;
   okText?: React.ReactNode;
+  hideDestroy?: boolean;
   onShow?: () => void;
   onHide?: () => void;
 }
@@ -46,6 +47,7 @@ function Modal(props: ModalProps) {
     confirmCareful = false,
     closeCorner = false,
     confirmable = true,
+    hideDestroy = true,
     okText = '确定',
     cancelText = '取消',
     title,
@@ -121,7 +123,7 @@ function Modal(props: ModalProps) {
   return (
     <FadeIn
       show={visible}
-      needDestroy
+      needDestroy={hideDestroy}
       limitTstProperty
       onShow={onShow}
       onHide={onHide}
