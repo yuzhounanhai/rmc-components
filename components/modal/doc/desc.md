@@ -195,6 +195,15 @@ function Demo() {
 | onOk | 模态框确认回调 | () => void | - | - |
 | onCancel | 模态框取消回调 | () => void | - | - |
 
+#### QuickModal
+
+目前有以下几种方式可以快速创建 `Modal`（不同方法预设了不同的初始值）
+
++ Modal.info: 创建只有一个取消按钮的模态框
+
++ Modal.confirm: 创建出存在确认、取消按钮的模态框
+
++ Modal.showCustom: 创建一个自定义结构的模态框
 #### QuickModal API
 
 模态框快速创建的 API 与模态框的 API 基本类似，除以下：
