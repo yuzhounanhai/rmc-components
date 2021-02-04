@@ -7,7 +7,7 @@ import Drawer from '../drawer/index';
 import PickerView, {
   Key,
   PickerViewProps,
-} from '../pickerView/index';
+} from '../picker-view/index';
 import { defaultPrefixCls } from '../_config/dict';
 
 export interface PickerProps extends PickerViewProps {

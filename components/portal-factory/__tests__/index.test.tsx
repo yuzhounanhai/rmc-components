@@ -2,7 +2,7 @@ import React from 'react';
 import Button from '../../button';
 import createPortalUtils, {
   contentRenderFn,
-} from '../../portalFactory/index';
+} from '../../portal-factory/index';
 import baseReactDOMTest, {
   $$,
   $$A,

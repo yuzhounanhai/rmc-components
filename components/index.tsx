@@ -7,8 +7,8 @@ export { default as Carousel } from './carousel';
 export type { FadeProps } from './fade';
 export { default as Fade } from './fade';
 
-export type { GridPwdProps } from './gridPwd';
-export { default as GridPwd } from './gridPwd';
+export type { GridPwdProps } from './grid-pwd';
+export { default as GridPwd } from './grid-pwd';
 
 export type { InputProps, PasswordInputProps, PhoneInputProps } from './input';
 export { default as Input } from './input';
@@ -19,10 +19,10 @@ export { default as Modal } from './modal';
 export type { PickerProps } from './picker';
 export { default as Picker } from './picker';
 
-export type { PickerViewProps } from './pickerView';
-export { default as PickerView } from './pickerView';
+export type { PickerViewProps } from './picker-view';
+export { default as PickerView } from './picker-view';
 
-export { default as PortalFactory } from './portalFactory';
+export { default as PortalFactory } from './portal-factory';
 
 export type {
   ArticleSkeletonProps,

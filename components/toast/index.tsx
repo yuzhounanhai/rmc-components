@@ -6,7 +6,7 @@ import CheckCircle from '../_icon/CheckCircle/index';
 import PortalFactory, {
   contentRenderFn,
   RenderFuncUtils,
-} from '../portalFactory/index';
+} from '../portal-factory/index';
 import BaseToast, {
   ToastProps,
 } from '../toast/toast';

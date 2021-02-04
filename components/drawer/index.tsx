@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PortalFactory, {
   contentRenderFn,
-} from '../portalFactory/index';
+} from '../portal-factory/index';
 import BaseDrawer, {
   QuickDrawerProps,
   DrawerProps,
