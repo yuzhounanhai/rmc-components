@@ -633,7 +633,7 @@ initialize {
                   "attribs": Object {},
                   "children": Array [
                     Node {
-                      "data": "content",
+                      "data": "close",
                       "next": null,
                       "parent": [Circular],
                       "prev": null,
@@ -706,7 +706,7 @@ initialize {
                 "attribs": Object {},
                 "children": Array [
                   Node {
-                    "data": "content",
+                    "data": "close",
                     "next": null,
                     "parent": [Circular],
                     "prev": null,

@@ -45,7 +45,6 @@ describe('Drawer', () => {
           </div>
         )
       }
-      <div>content</div>
     </BaseDrawer>
   );
   it('should trigger onShow/onHide callback when <Drawer /> visible status changed', async () => {
