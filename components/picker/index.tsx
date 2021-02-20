@@ -18,6 +18,7 @@ export interface PickerProps extends PickerViewProps {
   defaultValue?: Key[];
   onOk?: (value: Key[]) => void;
   onCancel?: (value: Key[]) => void;
+  onCreatePop?: () => void;
   popClassName?: string;
   maskClosable?: boolean;
   children?: React.ReactNode | (
@@ -37,6 +38,7 @@ export default (props: PickerProps) => {
     title,
     defaultValue = [],
     onOk,
+    onCreatePop,
     popClassName,
     onCancel: onCancelCb,
     maskClosable,
@@ -49,6 +51,7 @@ export default (props: PickerProps) => {
   const [currentValueRef, setCurrentValue] = useRefState<Key[]>(defaultValue);
 
   const createPop = () => {
+    typeof onCreatePop === 'function' && onCreatePop();
     Drawer.createDrawer({
       maskClosable,
       className: cn(`${prefixCls}-picker-wrapper`, popClassName),
