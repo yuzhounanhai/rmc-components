@@ -70,7 +70,7 @@ const Toast: ToastType = (props: ToastProps) => (
 
 Toast.info = (configOrContent) => {
   const props = typeof configOrContent === 'object' ? {
-    ...(configOrContent || {})
+    ...configOrContent
   } : {};
   if (typeof configOrContent === 'string') {
     props.content = configOrContent;
@@ -115,7 +115,7 @@ Toast.fail = (configOrContent) => {
   if (typeof configOrContent === 'object') {
     props = {
       ...props,
-      ...(configOrContent || {}),
+      ...configOrContent,
     };
   }
   if (typeof configOrContent === 'string') {
@@ -138,7 +138,7 @@ Toast.success = (configOrContent) => {
   if (typeof configOrContent === 'object') {
     props = {
       ...props,
-      ...(configOrContent || {}),
+      ...configOrContent,
     };
   }
   if (typeof configOrContent === 'string') {

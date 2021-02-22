@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { act, Simulate } from 'react-dom/test-utils';
 import CheckOutlined from '@ant-design/icons/lib/icons/CheckOutlined'
 import { mount } from 'enzyme';
 import FadeIn from '../../fade/fadeIn';
@@ -7,6 +7,8 @@ import baseTest from '../../../tests/common/baseTest';
 import Toast from '..';
 import BaseToast from '../toast';
 import { sleep } from '../../../tests/common/utils';
+import { $$ } from '../../../tests/common/baseReactDOMTest';
+import { defaultPrefixCls } from '../../_config/dict';
 
 describe('Toast', () => {
   baseTest(
@@ -51,6 +53,10 @@ describe('Toast', () => {
       )}
     />
   );
+
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
 
   it('onHide callback should trigger when Toast is hide', async () => {
     const onHideCb = jest.fn();
@@ -123,9 +129,86 @@ describe('Toast', () => {
     expect(Toast.hide).toBeDefined();
   });
 
-  it('Call "Toast.hide" should not throw any warning or error where Toast is not exist.', () => {
+  it('Call "Toast.hide" should not throw any warning or error whether Toast exist or not.', async () => {
     expect(() => {
       Toast.hide();
+    }).not.toThrow();
+    Toast.info('content');
+    expect(() => {
+      Toast.hide();
+    }).not.toThrow();
+    Toast.delayLoading(1000);
+    expect(() => {
+      Toast.hide();
+    }).not.toThrow();
+    Toast.delayLoading(100);
+    await act(async () => {
+      await sleep(200);
+    });
+    Toast.hide();
+  });
+
+  it('should not throw any warning or error when call quick function one by one.', () => {
+    expect(() => {
+      Toast.success('content');
+      Toast.success({
+        content: 'content',
+      });
+      Toast.delayLoading();
+      Toast.fail('content');
+      Toast.fail({
+        content: 'content',
+      });
+    }).not.toThrow();
+  });
+
+  it('should destory Toast which created by quick function when "onHide" has been triggered.', async () => {
+    const onHideCb = jest.fn();
+    Toast.info({
+      content: 'content',
+      onHide: onHideCb,
+      duration: 200,
+      className: 'test-toast'
+    });
+    await act(async () => {
+      await sleep(50);
+    });
+    expect($$('.test-toast')).not.toBeNull();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    await act(async () => {
+      await sleep(500);
+    });
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    await sleep(50);
+    expect(onHideCb).toHaveBeenCalledTimes(1);
+    expect($$('.test-toast')).toBeNull();
+  });
+
+  it('should clear timeout when component will unmount after "onShowCb" has been triggered.', async () => {
+    const wrapper = mount(
+      <Toast
+        content="content"
+        duration={3000}
+      />
+    );
+    const wrapper1 = mount(
+      <Toast
+        content="content"
+        duration={0}
+      />
+    );
+    await act(async () => {
+      await sleep(50);
+      wrapper.update();
+      wrapper1.update();
+    });
+    wrapper.find(FadeIn).simulate('transitionend');
+    wrapper1.find(FadeIn).simulate('transitionend');
+    expect(() => {
+      wrapper.unmount()
+    }).not.toThrow();
+    expect(() => {
+      wrapper1.unmount()
     }).not.toThrow();
   });
 });
