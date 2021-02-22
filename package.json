@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "scripts": {
+    "test:coverage": "jest --coverage",
     "test": "jest",
     "build:types": "tsc --emitDeclarationOnly",
     "build:publish": "cross-env NODE_ENV=production webpack --config config/webpack.publish.config.js",

@@ -50,6 +50,8 @@ module.exports = {
   // 测试文件, 也会收集该文件的测试覆盖率
   collectCoverageFrom: [
     'components/**/*.{js,jsx,ts,tsx}',
+    '!components/**/style/**',
+    '!components/*.{js,jsx,ts,tsx}',
   ],
   // 指定搜索测试文件的范围, 规定了在哪些目录范围及什么规
   // 则下的文件才是测试文件, 如果超出了圈定的范围, 或者命
