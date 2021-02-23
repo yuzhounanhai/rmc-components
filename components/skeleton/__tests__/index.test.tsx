@@ -1,8 +1,19 @@
 import React from 'react';
 import Skeleton from '../index';
 import baseTest from '../../../tests/common/baseTest';
+import { mergeClassNames } from '../base';
+import { defaultPrefixCls } from '../../_config/dict';
 
 describe('Skeleton', () => {
+  describe('Base Support', () => {
+    it('mergeClassNames', () => {
+      const mergedClass1 = mergeClassNames('test', {});
+      const mergedClass2 = mergeClassNames('test', {}, 'prefix');
+      expect(mergedClass1).toBe(`${defaultPrefixCls}-skeleton test`);
+      expect(mergedClass2).toBe('prefix-skeleton test');
+    });
+  });
+
   describe('Skeleton.Article', () => {
     baseTest(
       <Skeleton />
