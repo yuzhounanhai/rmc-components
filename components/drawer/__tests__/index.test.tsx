@@ -1,5 +1,5 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import { act, Simulate } from 'react-dom/test-utils';
 import BaseDrawer from '../drawer';
 import Drawer from '..';
 import { mount } from 'enzyme';
@@ -7,13 +7,18 @@ import FadeIn from '../../fade/fadeIn';
 import SlideIn from '../../slide/slideIn';
 import baseTest from '../../../tests/common/baseTest';
 import { sleep } from '../../../tests/common/utils';
+import baseReactDOMTest, { $$ } from '../../../tests/common/baseReactDOMTest';
+import { defaultPrefixCls } from '../../_config/dict';
 
 describe('Drawer', () => {
+  baseReactDOMTest();
+
   baseTest(
     <BaseDrawer>
       <div>content</div>
     </BaseDrawer>
   );
+
   baseTest(
     <BaseDrawer
       direction="↓"
@@ -21,6 +26,7 @@ describe('Drawer', () => {
       <div>content</div>
     </BaseDrawer>
   );
+
   baseTest(
     <BaseDrawer
       onShow={jest.fn()}
@@ -31,6 +37,7 @@ describe('Drawer', () => {
       <div>content</div>
     </BaseDrawer>
   );
+
   baseTest(
     <BaseDrawer
       onCancel={jest.fn()}
@@ -47,6 +54,7 @@ describe('Drawer', () => {
       }
     </BaseDrawer>
   );
+
   it('should trigger onShow/onHide callback when <Drawer /> visible status changed', async () => {
     const onHideCb = jest.fn();
     const onShowCb = jest.fn();
@@ -165,5 +173,62 @@ describe('Drawer', () => {
 
   it('Drawer.createDrawer should be defined', () => {
     expect(Drawer.createDrawer).toBeDefined();
+  });
+
+  it('Drawer should run correctly whick created by "createDrawer" without "onCancel" parameter.', async () => {
+    const onHideCb = jest.fn();
+    Drawer.createDrawer({
+      content: 'content',
+      onHide: onHideCb,
+      className: 'test-drawer',
+    });
+    expect($$('.test-drawer')).not.toBeNull();
+    await act(async () => {
+      await sleep(50);
+    });
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-slide`));
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    Simulate.click($$(`.${defaultPrefixCls}-drawer-mask`));
+    expect(onHideCb).not.toBeCalled();
+    await act(async () => {
+      await sleep(10);
+    });
+    expect(() => {
+      Simulate.click($$(`.${defaultPrefixCls}-drawer-mask`));
+    }).not.toThrow();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-slide`));
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    expect(onHideCb).toBeCalled();
+    expect($$('.test-drawer')).toBeNull();
+  });
+
+  it('Drawer should run correctly whick created by "createDrawer" with "onCancel" parameter.', async () => {
+    const onHideCb = jest.fn();
+    const onCancelCb = jest.fn();
+    Drawer.createDrawer({
+      content: 'content',
+      onHide: onHideCb,
+      onCancel: (close) => {
+        close();
+        onCancelCb();
+      },
+      className: 'test-drawer',
+    });
+    expect($$('.test-drawer')).not.toBeNull();
+    await act(async () => {
+      await sleep(50);
+    });
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-slide`));
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    Simulate.click($$(`.${defaultPrefixCls}-drawer-mask`));
+    expect(onCancelCb).toBeCalled();
+    expect(onHideCb).not.toBeCalled();
+    await act(async () => {
+      await sleep(10);
+    });
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-slide`));
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    expect(onHideCb).toBeCalled();
+    expect($$('.test-drawer')).toBeNull();
   });
 });

@@ -42,9 +42,13 @@ const renderDrawer: contentRenderFn = (props: QuickDrawerProps, update, destroy)
 
   const onHideFn = () => {
     typeof onHide === 'function' && onHide();
-    if (isInClosing) {
-      destroy();
-    }
+    // 可以通过控制 show 参数来触发 onHide 回调，下面的
+    // 这个判断本意是区分是由内部的关闭函数引发的还是show
+    // 参数的改变引发的，但是这个方法中并没有暴露出修改props
+    // 的接口, 因此可以去掉这个判断.
+    // if (isInClosing) {
+    // }
+    destroy();
   };
 
   return (
@@ -73,7 +77,7 @@ const Drawer: DrawerType = (props: DrawerProps) => {
 
 Drawer.createDrawer = (config) => {
   const props = {
-    ...(config || {}),
+    ...config,
   };
   const pf = PortalFactory(renderDrawer);
   pf.render(props);
