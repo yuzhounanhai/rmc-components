@@ -59,7 +59,7 @@ export default (props: CarouselProps) => {
   } else if (autoplay && typeof autoplay === 'object') {
     autoplayConfig = {
       disableOnInteraction: false,
-      ...(autoplay || {})
+      ...autoplay,
     }
   }
   return (
