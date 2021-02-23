@@ -12,6 +12,7 @@ export default (props: FadeProps) => {
   useEffect(() => {
     timer.current = window.setTimeout(() => {
       setIsFirst(false);
+      timer.current = undefined;
     }, 0);
     return () => {
       if (timer.current) {

@@ -13,23 +13,33 @@ describe('Fade', () => {
       <div>content</div>
     </Fade>
   );
+
   baseTest(
     <Fade.fadeIn>
       <div>content</div>
     </Fade.fadeIn>
   );
+
   baseTest(
     <Fade show={false}>
       <div>content</div>
     </Fade>
   );
+
   baseTest(
     <Fade.fadeIn show={false}>
       <div>content</div>
     </Fade.fadeIn>
   );
+
+  baseTest(
+    <Fade show prefixCls="test">
+      <div>content</div>
+    </Fade>
+  );
   it('should trigger correct events when transitionend event dispatch', async () => {
     const transitionEndCb = jest.fn();
+    const childrenTransitionendCb = jest.fn();
     const onHideCb = jest.fn();
     const onShowCb = jest.fn();
     const onChangeCb = jest.fn();
@@ -41,11 +51,17 @@ describe('Fade', () => {
         onShow={onShowCb}
         onChange={onChangeCb}
       >
-        <div className="inner-content">content</div>
+        <div
+          className="inner-content"
+          onTransitionEnd={childrenTransitionendCb}
+        >
+          content
+        </div>
       </Fade>
     );
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalled();
+    expect(childrenTransitionendCb).toBeCalled();
     expect(onHideCb).not.toBeCalled();
     expect(onShowCb).not.toBeCalled();
     expect(onChangeCb).not.toBeCalled();
@@ -56,6 +72,7 @@ describe('Fade', () => {
     await sleep(50);
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalledTimes(2);
+    expect(childrenTransitionendCb).toBeCalledTimes(2);
     expect(onHideCb).toBeCalledTimes(0);
     expect(onShowCb).toBeCalled();
     expect(onChangeCb).toBeCalledTimes(1);
@@ -65,6 +82,7 @@ describe('Fade', () => {
     wrapper.update();
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalledTimes(3);
+    expect(childrenTransitionendCb).toBeCalledTimes(3);
     expect(onHideCb).toBeCalledTimes(1);
     expect(onShowCb).toBeCalledTimes(1);
     expect(onChangeCb).toBeCalledTimes(2);
@@ -192,6 +210,25 @@ describe('Fade', () => {
     });
     wrapper3.update();
     expect((wrapper3.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe('ease-in');
+    const wrapper4 = mount(
+      <Fade
+        timingFunction=""
+        showTimingFunction=""
+        hideTimingFunction=""
+      >
+        <div className="wrapper">content</div>
+      </Fade>
+    );
+    wrapper4.setProps({
+      show: false,
+    });
+    wrapper4.update();
+    expect((wrapper4.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe('');
+    wrapper4.setProps({
+      show: true,
+    });
+    wrapper4.update();
+    expect((wrapper4.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe('');
   });
 
   it('should add correct transition-property when limitTstProperty props to be TRUE', () => {
@@ -221,5 +258,31 @@ describe('Fade', () => {
     );
     expect((wrapper.find('.wrapper').getDOMNode() as HTMLElement).style.transitionDuration).toBe('1s');
     expect((wrapper.find('.wrapper').getDOMNode() as HTMLElement).style.transitionDelay).toBe('0.5s');
+  });
+
+  it('should not throw any error or warning when destory a <FadeIn /> component.', async () => {
+    const wrapper1 = mount(
+      <Fade.fadeIn
+        show
+      >
+        <div className="wrapper">content</div>
+      </Fade.fadeIn>
+    );
+    const wrapper2 = mount(
+      <Fade.fadeIn
+        show
+      >
+        <div className="wrapper">content</div>
+      </Fade.fadeIn>
+    );
+    expect(() => {
+      wrapper1.unmount();
+    }).not.toThrow();
+    await act(async () => {
+      await sleep(50);
+    });
+    expect(() => {
+      wrapper2.unmount();
+    }).not.toThrow();
   });
 });

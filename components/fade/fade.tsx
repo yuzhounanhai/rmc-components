@@ -155,7 +155,7 @@ class Fade extends React.Component<FadeProps, FadeState> {
       timingFunction,
       showTimingFunction,
       hideTimingFunction,
-      prefixCls = defaultPrefixCls,
+      prefixCls,
       className,
       style,
       onShow,
@@ -171,9 +171,9 @@ class Fade extends React.Component<FadeProps, FadeState> {
 
     const children = React.Children.only(propsChildren);
 
-    if (isElementShow && children) {
+    if (isElementShow && typeof children === 'object') {
       return {
-        ...(children || {}),
+        ...children,
         props: {
           ...(children as React.ReactElement).props,
           ...restProps,
@@ -199,7 +199,7 @@ class Fade extends React.Component<FadeProps, FadeState> {
             className,
             (children as React.ReactElement).props.className,
             `${prefixCls}-fade`,
-            transitionClass.replace(replaceTag, prefixCls),
+            transitionClass.replace(replaceTag, prefixCls as string),
           ),
         },
       }
