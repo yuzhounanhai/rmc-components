@@ -151,7 +151,7 @@ exports[`Slide component snapshots tests 4`] = `
 initialize {
   "0": Node {
     "attribs": Object {
-      "class": "wrapper rmcc-slide rmcc-slide-begin-left rmcc-slide-op-0",
+      "class": "wrapper rmcc-slide rmcc-slide-begin-up rmcc-slide-op-0",
       "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
     },
     "children": Array [
@@ -200,8 +200,8 @@ exports[`Slide component snapshots tests 5`] = `
 initialize {
   "0": Node {
     "attribs": Object {
-      "class": "wrapper rmcc-slide rmcc-slide-begin-right",
-      "style": "transition-property:transform;transition-duration:0.5s;transition-timing-function:ease",
+      "class": "wrapper rmcc-slide rmcc-slide-begin-down rmcc-slide-op-0",
+      "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
     },
     "children": Array [
       Node {
@@ -295,7 +295,154 @@ initialize {
 `;
 
 exports[`Slide component snapshots tests 7`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "wrapper rmcc-slide rmcc-slide-begin-right",
+      "style": "transition-property:transform;transition-duration:0.5s;transition-timing-function:ease",
+    },
+    "children": Array [
+      Node {
+        "data": "content",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "text",
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Slide component snapshots tests 8`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "wrapper rmcc-slide rmcc-slide-begin-left rmcc-slide-op-0",
+      "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+    },
+    "children": Array [
+      Node {
+        "data": "content",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "text",
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Slide component snapshots tests 9`] = `
 Object {
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
+
+exports[`Slide component snapshots tests 10`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "wrapper rmcc-slide rmcc-slide-op-1",
+      "style": "transition-property:transform,opacity;transition-duration:0.5s;transition-timing-function:ease",
+    },
+    "children": Array [
+      Node {
+        "data": "content",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "text",
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+      "style": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
   "options": Object {
     "decodeEntities": true,
     "xml": false,

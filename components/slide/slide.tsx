@@ -167,12 +167,12 @@ class Slide extends React.Component<SlideProps, SlideState> {
 
   parseTransitionClass(className: string) {
     const {
-      prefixCls = Slide.defaultProps.prefixCls,
-      direction = Slide.defaultProps.direction,
+      prefixCls,
+      direction,
     } = this.props;
     const prefixReg = new RegExp(prefixFlag, 'g');
     const directionReg = new RegExp(directionFlag, 'g');
-    return className.replace(prefixReg, prefixCls).replace(directionReg, this.getStandardDirection(direction));
+    return className.replace(prefixReg, prefixCls as string).replace(directionReg, this.getStandardDirection(direction as Directions));
   }
 
   handleTransitionEnd() {
@@ -180,23 +180,23 @@ class Slide extends React.Component<SlideProps, SlideState> {
       onShow,
       onHide,
       onChange,
-      direction = Slide.defaultProps.direction,
+      direction,
     } = this.props;
     if (this.status) {
       let isEnter = true;
       if (this.status === SlideStatus.enter) {
-        typeof onShow === 'function' && onShow(this.getStandardDirection(direction));
+        typeof onShow === 'function' && onShow(this.getStandardDirection(direction as Directions));
       }
       if (this.status === SlideStatus.exit) {
         isEnter = false;
         this.setState({
           isElementShow: this.getIsElementShow(false),
         }, () => {
-          typeof onHide === 'function' && onHide(this.getStandardDirection(direction));          
+          typeof onHide === 'function' && onHide(this.getStandardDirection(direction as Directions));          
         });
       }
       this.status = '';
-      typeof onChange === 'function' && onChange(this.getStandardDirection(direction), isEnter);
+      typeof onChange === 'function' && onChange(this.getStandardDirection(direction as Directions), isEnter);
     }
   }
 
@@ -229,9 +229,9 @@ class Slide extends React.Component<SlideProps, SlideState> {
 
     const children = React.Children.only(propsChildren);
 
-    if (isElementShow && children) {
+    if (isElementShow && typeof children === 'object') {
       return {
-        ...(children || {}),
+        ...children,
         props: {
           ...(children as React.ReactElement).props,
           ...restProps,

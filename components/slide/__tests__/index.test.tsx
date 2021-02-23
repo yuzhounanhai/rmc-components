@@ -13,6 +13,7 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
   baseTest(
     <Slide
       direction="up"
@@ -20,6 +21,7 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
   baseTest(
     <Slide
       direction="→"
@@ -27,6 +29,23 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
+  baseTest(
+    <Slide
+      direction="↑"
+    >
+      <div className="wrapper">content</div>
+    </Slide>
+  );
+
+  baseTest(
+    <Slide
+      direction="↓"
+    >
+      <div className="wrapper">content</div>
+    </Slide>
+  );
+
   baseTest(
     <Slide
       direction="←"
@@ -35,6 +54,7 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
   baseTest(
     <Slide
       direction="right"
@@ -43,6 +63,7 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
   baseTest(
     <Slide.slideIn
       direction="left"
@@ -50,6 +71,7 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide.slideIn>
   );
+
   baseTest(
     <Slide
       show={false}
@@ -58,8 +80,18 @@ describe('Slide', () => {
       <div className="wrapper">content</div>
     </Slide>
   );
+
+  baseTest(
+    <Slide
+      show
+    >
+      <div className="wrapper">content</div>
+    </Slide>
+  );
+
   it('should trigger correct events when transitionend event dispatch', async () => {
     const transitionEndCb = jest.fn();
+    const childrenTransitionendCb = jest.fn();
     const onShowCb = jest.fn();
     const onHideCb = jest.fn();
     const onChangeCb = jest.fn();
@@ -71,11 +103,12 @@ describe('Slide', () => {
         onShow={onShowCb}
         onChange={onChangeCb}
       >
-        <div>content</div>
+        <div onTransitionEnd={childrenTransitionendCb}>content</div>
       </Slide>
     );
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalled();
+    expect(childrenTransitionendCb).toBeCalled();
     expect(onHideCb).not.toBeCalled();
     expect(onShowCb).not.toBeCalled();
     expect(onChangeCb).not.toBeCalled();
@@ -86,6 +119,7 @@ describe('Slide', () => {
     await sleep(50);
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalledTimes(2);
+    expect(childrenTransitionendCb).toBeCalledTimes(2);
     expect(onHideCb).toBeCalledTimes(0);
     expect(onShowCb).toBeCalled();
     expect(onChangeCb).toBeCalledTimes(1);
@@ -95,6 +129,7 @@ describe('Slide', () => {
     wrapper.update();
     wrapper.simulate('transitionend');
     expect(transitionEndCb).toBeCalledTimes(3);
+    expect(childrenTransitionendCb).toBeCalledTimes(3);
     expect(onHideCb).toBeCalledTimes(1);
     expect(onShowCb).toBeCalledTimes(1);
     expect(onChangeCb).toBeCalledTimes(2);
@@ -222,6 +257,25 @@ describe('Slide', () => {
     });
     wrapper3.update();
     expect((wrapper3.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe('ease-in');
+    const wrapper4 = mount(
+      <Slide
+        timingFunction=""
+        showTimingFunction=""
+        hideTimingFunction=""
+      >
+        <div className="wrapper">content</div>
+      </Slide>
+    );
+    wrapper4.setProps({
+      show: false,
+    });
+    wrapper4.update();
+    expect((wrapper4.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe("");
+    wrapper4.setProps({
+      show: true,
+    });
+    wrapper4.update();
+    expect((wrapper4.find('.wrapper').getDOMNode() as HTMLElement).style.transitionTimingFunction).toBe("");
   });
 
   it('should add correct transition-property.', () => {
@@ -257,5 +311,31 @@ describe('Slide', () => {
     );
     expect((wrapper.find('.wrapper').getDOMNode() as HTMLElement).style.transitionDuration).toBe('1s');
     expect((wrapper.find('.wrapper').getDOMNode() as HTMLElement).style.transitionDelay).toBe('0.5s');
+  });
+
+  it('should not throw any error or warning when destory a <SlideIn /> component.', async () => {
+    const wrapper1 = mount(
+      <Slide.slideIn
+        show
+      >
+        <div className="wrapper">content</div>
+      </Slide.slideIn>
+    );
+    const wrapper2 = mount(
+      <Slide.slideIn
+        show
+      >
+        <div className="wrapper">content</div>
+      </Slide.slideIn>
+    );
+    expect(() => {
+      wrapper1.unmount();
+    }).not.toThrow();
+    await act(async () => {
+      await sleep(50);
+    });
+    expect(() => {
+      wrapper2.unmount();
+    }).not.toThrow();
   });
 });
