@@ -7,10 +7,12 @@ import baseTest from '../../../tests/common/baseTest';
 import Toast from '..';
 import BaseToast from '../toast';
 import { sleep } from '../../../tests/common/utils';
-import { $$ } from '../../../tests/common/baseReactDOMTest';
+import baseReactDOMTest, { $$ } from '../../../tests/common/baseReactDOMTest';
 import { defaultPrefixCls } from '../../_config/dict';
 
 describe('Toast', () => {
+  baseReactDOMTest();
+
   baseTest(
     <BaseToast
       content="content"
@@ -53,10 +55,6 @@ describe('Toast', () => {
       )}
     />
   );
-
-  afterEach(() => {
-    document.body.innerHTML = '';
-  });
 
   it('onHide callback should trigger when Toast is hide', async () => {
     const onHideCb = jest.fn();
