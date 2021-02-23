@@ -6,9 +6,7 @@ import React, {
   forwardRef,
 } from 'react';
 import cn from 'classnames';
-import {
-  CloseCircleFilled
-} from '@ant-design/icons';
+import CloseCircleFilled from '@ant-design/icons/CloseCircleFilled';
 import { isDef } from '../_util/index';
 import useUpdateEffect from '../_hook/useUpdateEffect/index';
 import { defaultPrefixCls } from '../_config/dict';
@@ -120,17 +118,25 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
   };
   const onChangeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const el = e.target;
-    let currentValue = el.value;
+    const elValue = el.value;
+    // 如果当前值已经达到最大值,继续输入超过最大值的值,return掉
+    if (value.length >= maxLength && elValue.length >= maxLength) {
+      return;
+    }
+    let currentValue = elValue;
+    if (maxLength !== Infinity) {
+      currentValue = currentValue.slice(0, maxLength);
+    }
     try {
       const inputSelection: InputSelectionObj = {};
       inputSelection.start = el.selectionStart;
       inputSelection.end = el.selectionEnd;
-      if (currentValue.length > maxLength) {
-        if (inputSelection.start) {
-          inputSelection.start -= 1;
+      if (elValue.length > maxLength) {
+        if (inputSelection.start && inputSelection.start > maxLength + 1) {
+          inputSelection.start = maxLength + 1;
         }
-        if (inputSelection.end) {
-          inputSelection.end -= 1;
+        if (inputSelection.end && inputSelection.end > maxLength + 1) {
+          inputSelection.end = maxLength + 1;
         }
       }
       if (typeof onHandleSelectionPos === 'function') {
@@ -145,11 +151,10 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
       }
       selectionRef.current = inputSelection;
     } catch (e) {}
-    if (currentValue.length > maxLength) {
+    if (elValue.length > maxLength) {
       setTimeout(() => {
         handlePosition();
       });
-      return;
     }
     if (currentValue !== value) {
       onRealChangeValue(currentValue);
