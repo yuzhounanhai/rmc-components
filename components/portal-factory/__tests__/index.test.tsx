@@ -41,6 +41,13 @@ describe('portalFactory', () => {
     expect(pf.render).toBeDefined();
     expect(pf.update).toBeDefined();
     expect(pf.destroy).toBeDefined();
+    pf.render();
+    expect(
+      $$('.contentValue')?.textContent
+    ).toBe('');
+    expect(
+      $$('.numberValue')?.textContent
+    ).toBe('');
     const content = '一';
     const number = '1';
     pf.render({
@@ -147,5 +154,18 @@ describe('portalFactory', () => {
     });
     ($$('.btn2') as HTMLElement).click();
     expect($$A('.contain').length).toBe(0);
+  });
+
+  it('should not throw any warning or error when function receive an argument that is not a function.', () => {
+    const consoleSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+    expect(() => {
+      const pf = createPortalUtils(null);
+      pf.render();
+      expect(consoleSpy).toHaveBeenCalledTimes(1);
+      pf.update({});
+      expect(consoleSpy).toHaveBeenCalledTimes(2);
+      pf.destroy();
+      expect(consoleSpy).toHaveBeenCalledTimes(3);
+    }).not.toThrow();
   });
 });

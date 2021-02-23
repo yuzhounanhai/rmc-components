@@ -45,7 +45,7 @@ function renderComponentNode(renderFn: contentRenderFn): RenderFuncUtils {
 
     render = (props) => {
       const jsx = renderFn({
-        ...(prevProps || {}),
+        ...prevProps,
         ...(props || {}),
       }, update, destroy);
       prevProps = props || {};
