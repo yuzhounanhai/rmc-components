@@ -2768,3 +2768,82 @@ initialize {
   },
 }
 `;
+
+exports[`Input component snapshots tests 5`] = `
+initialize {
+  "0": Node {
+    "attribs": Object {
+      "class": "rmcc-input",
+    },
+    "children": Array [
+      Node {
+        "attribs": Object {
+          "class": "rmcc-input-container",
+        },
+        "children": Array [
+          Node {
+            "attribs": Object {
+              "type": "tel",
+              "value": "123",
+            },
+            "children": Array [],
+            "name": "input",
+            "namespace": "http://www.w3.org/1999/xhtml",
+            "next": null,
+            "parent": [Circular],
+            "prev": null,
+            "type": "tag",
+            "x-attribsNamespace": Object {
+              "type": undefined,
+              "value": undefined,
+            },
+            "x-attribsPrefix": Object {
+              "type": undefined,
+              "value": undefined,
+            },
+          },
+        ],
+        "name": "div",
+        "namespace": "http://www.w3.org/1999/xhtml",
+        "next": null,
+        "parent": [Circular],
+        "prev": null,
+        "type": "tag",
+        "x-attribsNamespace": Object {
+          "class": undefined,
+        },
+        "x-attribsPrefix": Object {
+          "class": undefined,
+        },
+      },
+    ],
+    "name": "div",
+    "namespace": "http://www.w3.org/1999/xhtml",
+    "next": null,
+    "parent": Node {
+      "children": Array [
+        [Circular],
+      ],
+      "name": "root",
+      "next": null,
+      "parent": null,
+      "prev": null,
+      "type": "root",
+    },
+    "prev": null,
+    "type": "tag",
+    "x-attribsNamespace": Object {
+      "class": undefined,
+    },
+    "x-attribsPrefix": Object {
+      "class": undefined,
+    },
+  },
+  "_root": [Circular],
+  "length": 1,
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;

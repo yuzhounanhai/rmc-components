@@ -18,7 +18,7 @@ export interface PhoneInputRef extends InputRef {};
 
 export interface PhoneInputProps extends InputProps {};
 
-function formatPhoneNumber(realValue = '') {
+function formatPhoneNumber(realValue: string) {
   const arr = [];
   for (let i = 0; i < realValue.length; i++) {
     if (i === 3 || i === 7) {
@@ -50,9 +50,6 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
     }
   }, [value, v]);
   const onRealChangeValue = (realValue: string) => {
-    if (props.disabled) {
-      return;
-    }
     if (value === undefined) {
       setV(realValue);
     }
@@ -87,17 +84,13 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
     if (newValue !== v) {
       onRealChangeValue(newValue);
     } else {
-      if (componentRef.current) {
-        setTimeout(() => {
-          if (componentRef.current) {
-            componentRef.current.handlePosition();
-          } 
-        });
-      }
+      setTimeout(() => {
+        componentRef.current.handlePosition();
+      });
     }
   }
   useImperativeHandle(ref, () => ({
-    ...(componentRef.current || {}),
+    ...componentRef.current,
   }));
   return (
     <BaseInput

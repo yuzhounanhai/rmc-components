@@ -68,30 +68,22 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
   const handlePosition = () => {
     if (selectionRef.current) {
       try {
-        if (inputRef.current) {
-          inputRef.current.selectionStart = selectionRef.current.start || null;
-          inputRef.current.selectionEnd = selectionRef.current.end || null;
-        }
+        (inputRef.current as HTMLInputElement).selectionStart = selectionRef.current.start || null;
+        (inputRef.current as HTMLInputElement).selectionEnd = selectionRef.current.end || null;
       } catch (e) {}
     }
   }
   
   const focus = () => {
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    (inputRef.current as HTMLInputElement).focus();
   };
 
   const blur = () => {
-    if (inputRef.current) {
-      inputRef.current.blur();
-    }
+    (inputRef.current as HTMLInputElement).blur();
   };
 
   const select = () => {
-    if (inputRef.current) {
-      inputRef.current.select();
-    }
+    (inputRef.current as HTMLInputElement).select();
   };
 
   useEffect(() => {
@@ -109,7 +101,7 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
     if (disabled) {
       return;
     }
-    if (value !== undefined) {
+    if (props.value === undefined) {
       setValue(v);
     }
     if (typeof onChange === 'function') {
@@ -120,7 +112,7 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
     const el = e.target;
     const elValue = el.value;
     // 如果当前值已经达到最大值,继续输入超过最大值的值,return掉
-    if (value.length >= maxLength && elValue.length >= maxLength) {
+    if (value.length >= maxLength && elValue.length > maxLength) {
       return;
     }
     let currentValue = elValue;
@@ -131,13 +123,11 @@ function InputItem(props: InputProps, ref: React.Ref<InputRef>) {
       const inputSelection: InputSelectionObj = {};
       inputSelection.start = el.selectionStart;
       inputSelection.end = el.selectionEnd;
-      if (elValue.length > maxLength) {
-        if (inputSelection.start && inputSelection.start > maxLength + 1) {
-          inputSelection.start = maxLength + 1;
-        }
-        if (inputSelection.end && inputSelection.end > maxLength + 1) {
-          inputSelection.end = maxLength + 1;
-        }
+      if (inputSelection.start && inputSelection.start > maxLength + 1) {
+        inputSelection.start = maxLength + 1;
+      }
+      if (inputSelection.end && inputSelection.end > maxLength + 1) {
+        inputSelection.end = maxLength + 1;
       }
       if (typeof onHandleSelectionPos === 'function') {
         const {
