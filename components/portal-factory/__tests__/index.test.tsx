@@ -105,7 +105,7 @@ describe('portalFactory', () => {
       number,
     });
     pf.destroy();
-    expect($$('.contain')).toBeDefined();
+    expect($$('.contain')).toBeNull();
   });
 
   it('call updateFn should not throw error when not call renderFn', () => {
