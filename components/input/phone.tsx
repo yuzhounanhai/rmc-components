@@ -38,12 +38,7 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
   } = props;
   const maxLength = 11;
   const [v, setV] = useState(value || defaultValue || '');
-  const componentRef = useRef<InputRef>({
-    handlePosition: () => {},
-    focus: () => {},
-    blur: () => {},
-    select: () => {},
-  });
+  const componentRef = useRef<InputRef>();
   useUpdateEffect(() => {
     if (props.value !== undefined && value !== v) {
       setV(value || '');
@@ -85,12 +80,14 @@ function PhoneInputItem(props: PhoneInputProps, ref: React.Ref<PhoneInputRef>) {
       onRealChangeValue(newValue);
     } else {
       setTimeout(() => {
-        componentRef.current.handlePosition();
+        if (componentRef.current) {
+          componentRef.current.handlePosition();
+        }
       });
     }
   }
   useImperativeHandle(ref, () => ({
-    ...componentRef.current,
+    ...(componentRef.current as PhoneInputRef),
   }));
   return (
     <BaseInput

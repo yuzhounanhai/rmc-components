@@ -382,18 +382,25 @@ describe('Input', () => {
       const inputNode = wrapper.find('input').getDOMNode() as HTMLInputElement;
       inputNode.selectionStart = 9;
       inputNode.selectionEnd = 9;
-      await act(async () => {
-        wrapper.find('input').simulate('change', {
-          target: {
-            value: '138 12345',
-            selectionStart: 8,
-            selectionEnd: 8,
-          },
-        });
-        await sleep(50);
+      wrapper.find('input').simulate('change', {
+        target: {
+          value: '138 12345',
+          selectionStart: 8,
+          selectionEnd: 8,
+        },
       });
+      await sleep(50);
       expect((wrapper.find('input').getDOMNode() as HTMLInputElement).selectionStart).toBe(8);
       expect((wrapper.find('input').getDOMNode() as HTMLInputElement).selectionEnd).toBe(8);
+      wrapper.find('input').simulate('change', {
+        target: {
+          value: '13812345',
+          selectionStart: 8,
+          selectionEnd: 8,
+        },
+      });
+      wrapper.unmount();
+      await sleep(50);
     });
 
     it('should <Input.Phone/> ref has correctly instance.', () => {
