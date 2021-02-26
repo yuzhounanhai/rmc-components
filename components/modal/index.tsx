@@ -53,9 +53,13 @@ const renderModal: contentRenderFn = (props: QuickModalProps, update, destroy) =
   const onHideFn = () => {
     typeof onHide === 'function' && onHide();
     // 判断是否由close方法引发的onHide
-    if (isInClosing) {
-      destroy();
-    }
+    // onShow/onHide 是由 Fade 组件提供的, Fade 组件判断
+    // 在transitionend时触发何种回调,是根据内部的status
+    // 变量进行判断的。快速方法没有暴露任何操作show参数、
+    // 更新组件props的方法，因此 onHide 回调只能是关闭引发的
+    // if (isInClosing) {
+    // }
+    destroy();
   };
   const onOkFn = () => {
     typeof onOk === 'function'
@@ -84,7 +88,7 @@ Modal.info = function(config) {
   const modalProps = {
     confirmable: false,
     cancelText: '确定',
-    ...(config || {})
+    ...config
   };
   const pf = PortalFactory(renderModal);
   pf.render(modalProps);
@@ -92,7 +96,7 @@ Modal.info = function(config) {
 
 Modal.confirm = function(config) {
   const modalProps = {
-    ...(config || {})
+    ...config
   };
   const pf = PortalFactory(renderModal);
   pf.render(modalProps);
@@ -102,7 +106,7 @@ Modal.showCustom = function(config) {
   const modalProps = {
     maskClosable: true,
     customStructure: true,
-    ...(config || {})
+    ...config
   };
   const pf = PortalFactory(renderModal);
   pf.render(modalProps);

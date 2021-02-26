@@ -1,7 +1,11 @@
 import React from 'react';
-import { act } from 'react-dom/test-utils';
+import {
+  act,
+  Simulate,
+} from 'react-dom/test-utils';
 import { mount } from 'enzyme';
 import baseTest from '../../../tests/common/baseTest';
+import baseReactDOMTest, { $$ } from '../../../tests/common/baseReactDOMTest';
 import { sleep } from '../../../tests/common/utils';
 import FadeIn from '../../fade/fadeIn';
 import BaseModal from '../modal';
@@ -15,8 +19,19 @@ function TestComponent() {
 }
 
 describe('Modal', () => {
+  baseReactDOMTest();
+
   baseTest(
     <BaseModal hideDestroy={false}>
+      content
+    </BaseModal>
+  );
+
+  baseTest(
+    <BaseModal
+      hideDestroy={false}
+      width="80%"
+    >
       content
     </BaseModal>
   );
@@ -309,5 +324,105 @@ describe('Modal', () => {
     expect(Modal.info).toBeDefined();
     expect(Modal.confirm).toBeDefined();
     expect(Modal.showCustom).toBeDefined();
+  });
+
+  it('quick info modal should be worked correctly.', async () => {
+    const onHideCb = jest.fn();
+    Modal.info({
+      title: 'title',
+      content: 'content',
+      hideDestroy: false,
+      onHide: onHideCb,
+    });
+    await act(async () => {
+      await sleep(50);
+    });
+    expect($$(`.${defaultPrefixCls}-modal`)).not.toBeNull();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    Simulate.click($$(`.${defaultPrefixCls}-modal-cancel`));
+    // 连续点击不能出错
+    expect(() => {
+      Simulate.click($$(`.${defaultPrefixCls}-modal-cancel`));
+    }).not.toThrow();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    expect(onHideCb).toBeCalled();
+    expect($$(`.${defaultPrefixCls}-modal`)).toBeNull();
+  });
+
+  it('quick confirm modal should be worked correctly.', async () => {
+    const onOkCb = jest.fn();
+    Modal.confirm({
+      title: 'title',
+      content: 'content',
+      hideDestroy: false,
+      className: 'modal1',
+      onOk: (close) => {
+        onOkCb();
+        close();
+      },
+    });
+    Modal.confirm({
+      title: 'title',
+      content: 'content',
+      hideDestroy: false,
+      className: 'modal2',
+    });
+    await act(async () => {
+      await sleep(50);
+    });
+    expect($$('.modal1')).not.toBeNull();
+    expect($$('.modal2')).not.toBeNull();
+    Simulate.transitionEnd($$(`.modal1.${defaultPrefixCls}-fade`));
+    Simulate.transitionEnd($$(`.modal2.${defaultPrefixCls}-fade`));
+    Simulate.click($$(`.modal1 .${defaultPrefixCls}-modal-ok`));
+    expect(onOkCb).toBeCalled();
+    Simulate.click($$(`.modal2 .${defaultPrefixCls}-modal-ok`));
+    Simulate.transitionEnd($$(`.modal1.${defaultPrefixCls}-fade`));
+    Simulate.transitionEnd($$(`.modal2.${defaultPrefixCls}-fade`));
+    expect($$('.modal1')).toBeNull();
+    expect($$('.modal2')).toBeNull();
+  });
+
+  it('quick custom modal should be worked correctly.', async () => {
+    const onOkCb = jest.fn();
+    const onCancelCb = jest.fn();
+    Modal.showCustom({
+      content: (onOk, onCancel) => (
+        <div>
+          <button onClick={onOk} className="btn1">btn1</button>
+          <button onClick={onCancel} className="btn2">btn2</button>
+        </div>
+      ),
+      hideDestroy: false,
+      onOk: onOkCb,
+      onCancel: (close) => {
+        onCancelCb();
+        close();
+      },
+    });
+    await act(async () => {
+      await sleep(50);
+    });
+    expect($$(`.${defaultPrefixCls}-modal`)).not.toBeNull();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    Simulate.click($$('.btn1'));
+    expect(onOkCb).toBeCalled();
+    Simulate.click($$('.btn2'));
+    expect(onCancelCb).toBeCalled();
+    Simulate.transitionEnd($$(`.${defaultPrefixCls}-fade`));
+    expect($$(`.${defaultPrefixCls}-modal`)).toBeNull();
+  });
+
+  it('quick modal also can use children to render content(but it is not recommended).', async () => {
+    Modal.info({
+      children: (
+        <div className="container">content</div>
+      ),
+    });
+    await act(async () => {
+      await sleep(50);
+    });
+    expect($$(`.${defaultPrefixCls}-modal`)).not.toBeNull();
+    expect($$('.container')).not.toBeNull();
   });
 });
