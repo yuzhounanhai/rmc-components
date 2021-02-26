@@ -44,16 +44,12 @@ function GridPwd(props: GridPwdProps, ref: React.Ref<GridPwdRef>) {
   const inputRef = useRef<InputRef>();
 
   const doFocusInput = () => {
-    copy('')
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
+    copy('');
+    (inputRef.current as InputRef).focus();
   };
 
   const doBlurInput = () => {
-    if (inputRef.current) {
-      inputRef.current.blur();
-    }
+    (inputRef.current as InputRef).blur();
   };
 
   const reset = () => {
