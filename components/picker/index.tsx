@@ -122,7 +122,7 @@ export default (props: PickerProps) => {
         const originOnClick = (children as React.ReactElement).props.onClick;
         typeof originOnClick === 'function' && originOnClick(e);
       },
-    })
+    });
   }
   return null;
 };

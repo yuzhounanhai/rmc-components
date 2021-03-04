@@ -347,3 +347,12 @@ initialize {
   },
 }
 `;
+
+exports[`Picker component snapshots tests 5`] = `
+Object {
+  "options": Object {
+    "decodeEntities": true,
+    "xml": false,
+  },
+}
+`;
