@@ -56,10 +56,10 @@ function getItemReactNode(key: Key, value: React.ReactNode) {
 
 function recursionCascadeHandleData(
   arr: PickerCascadeData[],
-  deep = 0
+  deep: number,
 ): handledCascadeData[] {
   return arr.filter(item => isDef(item) && isDef(item.value)).map((item, i) => {
-    const key = isDef(item.key) ? item.key : `${deep}-${i}`;
+    const key = item.key;
     const o = {
       ...item,
       key,
@@ -75,7 +75,7 @@ function recursionCascadeHandleData(
 function mapHandleData(arr: PickerImcascadeData[][]): handledImcascadeData[][] {
   return arr.filter(i => Array.isArray(i) && i.length).map((group, gI) => {
     return group.filter(i => isDef(i) && isDef(i.value)).map((item, i) => {
-      const key = isDef(item.key) ? item.key : `${gI}-${i}`;
+      const key = item.key;
       return {
         ...item,
         key,
@@ -120,12 +120,6 @@ export default (props: PickerViewProps) => {
     minCols,
     ...restProps
   } = props;
-  if (!Array.isArray(data) || (data[0] && typeof data[0] !== 'object')) {
-    throw Error('The parameter "data" gets the wrong data type.');
-  }
-  if (!Array.isArray(defaultValue)) {
-    throw Error('The parameter "value" gets the wrong data type.');
-  }
   let groups: React.ReactNode[] = [];
 
   // 是否级联
@@ -241,14 +235,11 @@ export default (props: PickerViewProps) => {
         groupKeyValue.push(item.key);
         return item.$$react$$node;
       });
-      let colKey = deep + '';
-      if (deep >= 0) {
-        colKey = ''
-        for (let i = 0; i < deep; i++) {
-          colKey = colKey + value[i] + '-';
-        }
-        colKey += deep;
+      let colKey = '';
+      for (let i = 0; i < deep; i++) {
+        colKey = colKey + value[i] + '-';
       }
+      colKey += deep;
       returned.push((
         <div className={`${prefixCls}-picker-view-col`} key={colKey}>
           <Swiper
