@@ -5,6 +5,12 @@
   "typings": "types/index.d.ts",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "types"
+  ],
   "scripts": {
     "test:coverage": "jest --coverage",
     "test": "jest",
