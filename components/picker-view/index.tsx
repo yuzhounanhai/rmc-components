@@ -58,7 +58,7 @@ function recursionCascadeHandleData(
   arr: PickerCascadeData[],
   deep: number,
 ): handledCascadeData[] {
-  return arr.filter(item => isDef(item) && isDef(item.value)).map((item, i) => {
+  return arr.filter(item => isDef(item) && isDef(item.value)).map((item) => {
     const key = item.key;
     const o = {
       ...item,
@@ -73,8 +73,8 @@ function recursionCascadeHandleData(
 }
 
 function mapHandleData(arr: PickerImcascadeData[][]): handledImcascadeData[][] {
-  return arr.filter(i => Array.isArray(i) && i.length).map((group, gI) => {
-    return group.filter(i => isDef(i) && isDef(i.value)).map((item, i) => {
+  return arr.filter(i => Array.isArray(i) && i.length).map((group) => {
+    return group.filter(i => isDef(i) && isDef(i.value)).map((item) => {
       const key = item.key;
       return {
         ...item,
